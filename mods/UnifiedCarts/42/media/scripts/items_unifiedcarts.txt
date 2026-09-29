@@ -15,6 +15,7 @@ module UnifiedCarts
         OpenSound = LockerMetalOpen,
         PutInSound = LockerMetalTransferItem,
         Tags = UnifiedCart;base:heavyitem,
+        AcceptItemFunction = UnifiedCarts.acceptItem,
         StaticModel = ShoppingCartModel,
         WorldStaticModel = ShoppingCartModel,
         ReplaceInPrimaryHand = ShoppingCartModel holdingcartright,
