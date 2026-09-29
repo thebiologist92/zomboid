@@ -1,0 +1,5 @@
+UI_EN = {
+    UI_ZCR_Push = "Push %1",
+    UI_ZCR_Release = "Release %1",
+    UI_ZCR_Keybind = "Push / release nearest cart",
+}

@@ -1,0 +1,16 @@
+version = 0
+settings
+{
+    packFileName = B42ChunkCaching2x.pack
+    outputImageSize = 1024,1024
+    scale50 = false
+    inputImageDirectory
+    {
+        path = ../textures/Tileset/2x
+        imagesAreTilesheets = true
+    }
+    tileDef
+    {
+        path = ../../../../../The Indie Stone Dropbox/Tim Baker/PZ_Development/Art/Tiles/newtiledefinitions.tiles
+    }
+}

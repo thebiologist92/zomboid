@@ -1,0 +1,250 @@
+VERSION = 1,
+
+option ZuperCarts.SpawnPreset
+{
+    type = enum,
+    numValues = 4,
+    default = 2,
+    page = ZuperCarts,
+    translation = ZuperCarts_SpawnPreset,
+}
+
+option ZuperCarts.SpawnCarts
+{
+    type = boolean,
+    default = true,
+    page = ZuperCartsCarts,
+    translation = ZuperCarts_SpawnCarts,
+}
+
+option ZuperCarts.CartsStores
+{
+    type = boolean,
+    default = true,
+    page = ZuperCartsCarts,
+    translation = ZuperCarts_CartsStores,
+}
+
+option ZuperCarts.CartsStoresChance
+{
+    type = double,
+    default = 35,
+    min = 0,
+    max = 100,
+    page = ZuperCartsCarts,
+    translation = ZuperCarts_CartsStoresChance,
+}
+
+option ZuperCarts.CartsWarehouses
+{
+    type = boolean,
+    default = true,
+    page = ZuperCartsCarts,
+    translation = ZuperCarts_CartsWarehouses,
+}
+
+option ZuperCarts.CartsWarehousesChance
+{
+    type = double,
+    default = 15,
+    min = 0,
+    max = 100,
+    page = ZuperCartsCarts,
+    translation = ZuperCarts_CartsWarehousesChance,
+}
+
+option ZuperCarts.CartsGarages
+{
+    type = boolean,
+    default = true,
+    page = ZuperCartsCarts,
+    translation = ZuperCarts_CartsGarages,
+}
+
+option ZuperCarts.CartsGaragesChance
+{
+    type = double,
+    default = 0,
+    min = 0,
+    max = 100,
+    page = ZuperCartsCarts,
+    translation = ZuperCarts_CartsGaragesChance,
+}
+
+option ZuperCarts.CartsStorage
+{
+    type = boolean,
+    default = true,
+    page = ZuperCartsCarts,
+    translation = ZuperCarts_CartsStorage,
+}
+
+option ZuperCarts.CartsStorageChance
+{
+    type = double,
+    default = 10,
+    min = 0,
+    max = 100,
+    page = ZuperCartsCarts,
+    translation = ZuperCarts_CartsStorageChance,
+}
+
+option ZuperCarts.SpawnTrolleys
+{
+    type = boolean,
+    default = true,
+    page = ZuperCartsTrolleys,
+    translation = ZuperCarts_SpawnTrolleys,
+}
+
+option ZuperCarts.TrolleysStores
+{
+    type = boolean,
+    default = true,
+    page = ZuperCartsTrolleys,
+    translation = ZuperCarts_TrolleysStores,
+}
+
+option ZuperCarts.TrolleysStoresChance
+{
+    type = double,
+    default = 15,
+    min = 0,
+    max = 100,
+    page = ZuperCartsTrolleys,
+    translation = ZuperCarts_TrolleysStoresChance,
+}
+
+option ZuperCarts.TrolleysWarehouses
+{
+    type = boolean,
+    default = true,
+    page = ZuperCartsTrolleys,
+    translation = ZuperCarts_TrolleysWarehouses,
+}
+
+option ZuperCarts.TrolleysWarehousesChance
+{
+    type = double,
+    default = 30,
+    min = 0,
+    max = 100,
+    page = ZuperCartsTrolleys,
+    translation = ZuperCarts_TrolleysWarehousesChance,
+}
+
+option ZuperCarts.TrolleysGarages
+{
+    type = boolean,
+    default = true,
+    page = ZuperCartsTrolleys,
+    translation = ZuperCarts_TrolleysGarages,
+}
+
+option ZuperCarts.TrolleysGaragesChance
+{
+    type = double,
+    default = 10,
+    min = 0,
+    max = 100,
+    page = ZuperCartsTrolleys,
+    translation = ZuperCarts_TrolleysGaragesChance,
+}
+
+option ZuperCarts.TrolleysStorage
+{
+    type = boolean,
+    default = true,
+    page = ZuperCartsTrolleys,
+    translation = ZuperCarts_TrolleysStorage,
+}
+
+option ZuperCarts.TrolleysStorageChance
+{
+    type = double,
+    default = 20,
+    min = 0,
+    max = 100,
+    page = ZuperCartsTrolleys,
+    translation = ZuperCarts_TrolleysStorageChance,
+}
+
+option ZuperCarts.SpawnDollies
+{
+    type = boolean,
+    default = true,
+    page = ZuperCartsDollies,
+    translation = ZuperCarts_SpawnDollies,
+}
+
+option ZuperCarts.DolliesStores
+{
+    type = boolean,
+    default = true,
+    page = ZuperCartsDollies,
+    translation = ZuperCarts_DolliesStores,
+}
+
+option ZuperCarts.DolliesStoresChance
+{
+    type = double,
+    default = 5,
+    min = 0,
+    max = 100,
+    page = ZuperCartsDollies,
+    translation = ZuperCarts_DolliesStoresChance,
+}
+
+option ZuperCarts.DolliesWarehouses
+{
+    type = boolean,
+    default = true,
+    page = ZuperCartsDollies,
+    translation = ZuperCarts_DolliesWarehouses,
+}
+
+option ZuperCarts.DolliesWarehousesChance
+{
+    type = double,
+    default = 20,
+    min = 0,
+    max = 100,
+    page = ZuperCartsDollies,
+    translation = ZuperCarts_DolliesWarehousesChance,
+}
+
+option ZuperCarts.DolliesGarages
+{
+    type = boolean,
+    default = true,
+    page = ZuperCartsDollies,
+    translation = ZuperCarts_DolliesGarages,
+}
+
+option ZuperCarts.DolliesGaragesChance
+{
+    type = double,
+    default = 30,
+    min = 0,
+    max = 100,
+    page = ZuperCartsDollies,
+    translation = ZuperCarts_DolliesGaragesChance,
+}
+
+option ZuperCarts.DolliesStorage
+{
+    type = boolean,
+    default = true,
+    page = ZuperCartsDollies,
+    translation = ZuperCarts_DolliesStorage,
+}
+
+option ZuperCarts.DolliesStorageChance
+{
+    type = double,
+    default = 15,
+    min = 0,
+    max = 100,
+    page = ZuperCartsDollies,
+    translation = ZuperCarts_DolliesStorageChance,
+}

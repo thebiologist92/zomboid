@@ -1,0 +1,31 @@
+module CarroCartonero
+{
+    imports {Base}
+
+    /* ==================== TROLLEY CART ASSEMBLY ==================== */
+    /* Weld together a functional trolley cart from scrap metal.       */
+    /* Requires MetalWelding 3 - mid-game crafting option.             */
+    /* No magazine required - recipe is always available with skill.   */
+    /* =============================================================== */
+    craftRecipe AssembleCarroCartonero
+    {
+        timedAction = Welding,
+        time = 400,
+        Tags = InHandCraft;Welding,
+        category = Metalworking,
+        SkillRequired = MetalWelding:3,
+        xpAward = MetalWelding:25,
+        inputs
+        {
+            item 8 [Base.Plank],
+            item 2 [Base.MetalPipe],
+            item 2 [Base.Base.OldTire1],
+            item 3 [Base.BlowTorch],
+            item 1 tags[base:weldingmask] mode:keep,
+        }
+        outputs
+        {
+            item 1 SaucedCarroCartonero.CarroCartonero,
+        }
+    }
+}

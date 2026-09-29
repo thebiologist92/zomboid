@@ -1,0 +1,7 @@
+name=SaucedCarroCartonero - Carro Cartonero Custom
+id=SaucedCarroCartonero
+description=Adds Carro de Cartonero cart types using the SaucedCarts framework.
+poster=poster.png
+modversion=1.0.2
+versionmin=42.13.1
+require=\SaucedCarts

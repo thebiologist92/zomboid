@@ -1,0 +1,51 @@
+module SaucedWheelbarrow
+{
+    imports {Base}
+
+    /* ==================== TROLLEY CART ASSEMBLY ==================== */
+    /* Weld together a functional trolley cart from scrap metal.       */
+    /* Requires MetalWelding 3 - mid-game crafting option.             */
+    /* No magazine required - recipe is always available with skill.   */
+    /* =============================================================== */
+    craftRecipe AssembleWheelbarrowWood
+    {
+        timedAction = Welding,
+        time = 400,
+        Tags = InHandCraft;Welding,
+        category = Metalworking,
+        SkillRequired = MetalWelding:3,
+        xpAward = MetalWelding:25,
+        inputs
+        {
+            item 3 [Base.Plank],
+            item 2 [Base.MetalPipe],
+            item 3 [Base.BlowTorch],
+            item 1 tags[base:weldingmask] mode:keep,
+        }
+        outputs
+        {
+            item 1 SaucedWheelbarrow.WheelbarrowWood,
+        }
+    }
+
+    craftRecipe AssembleWheelbarrowMetal
+    {
+        timedAction = Welding,
+        time = 400,
+        Tags = InHandCraft;Welding,
+        category = Metalworking,
+        SkillRequired = MetalWelding:3,
+        xpAward = MetalWelding:25,
+        inputs
+        {
+            item 1 [Base.SheetMetal],
+            item 2 [Base.MetalPipe],
+            item 3 [Base.BlowTorch],
+            item 1 tags[base:weldingmask] mode:keep,
+        }
+        outputs
+        {
+            item 1 SaucedWheelbarrow.WheelbarrowMetal,
+        }
+    }
+}

@@ -1,0 +1,8 @@
+LOG  : General      f:0 st:496,653,803> version=42.20.4 b0bbce05d5 demo=false
+LOG  : Mod          f:0 st:496,667,386> loading ZuperCartsRebuilt
+LOG  : Lua          f:0 st:496,684,287> [ZCR-PROBE] BEGIN
+LOG  : Lua          f:0 st:496,684,294> [ZCR-PROBE] PASS: 14 real engine items; capacity, heavy-item flags, model changes, identity, contents, self nesting; dolly 25 / grocery 32 / trolley 37; 28 sandbox options; model script resolution
+LOG  : Network      f:0 st:496,689,757> *** SERVER STARTED ****
+LOG  : Lua          f:0 st:496,689,759> [ZCR-PROBE] SERVER STARTED
+LOG  : Lua          f:0 st:496,689,759> [ZCR-PROBE] BEGIN
+LOG  : Lua          f:0 st:496,689,762> [ZCR-PROBE] PASS: 14 real engine items; capacity, heavy-item flags, model changes, identity, contents, self nesting; dolly 25 / grocery 32 / trolley 37; 28 sandbox options; model script resolution

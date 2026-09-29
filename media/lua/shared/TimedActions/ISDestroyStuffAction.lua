@@ -1,0 +1,371 @@
+require "TimedActions/ISBaseTimedAction"
+
+ISDestroyStuffAction = ISBaseTimedAction:derive("ISDestroyStuffAction");
+
+local DESTROY_WEST = 0
+local DESTROY_NORTH = 1
+
+local function predicateSledgehammer(item)
+	if item:isBroken() then return false end
+	local type = item:getType()
+	return item:hasTag(ItemTag.SLEDGEHAMMER) or type == "Sledgehammer" or type == "Sledgehammer2"
+end
+
+function ISDestroyStuffAction:hasSledgehammerInRange(character, item)
+	if not item then return false end
+	local sledgehammer = character:getInventory():getFirstEvalRecurse(predicateSledgehammer)
+	if not sledgehammer and getDebug() then
+		sledgehammer = instanceItem(ItemKey.Weapon.SLEDGEHAMMER);
+	end
+	if not sledgehammer then return false end
+	if isClient() and self.wasValid == nil then
+		self.wasValid = self.item:getObjectIndex() ~= -1
+	end
+	if self.item:getObjectIndex() == -1 then
+		if isClient() then return self.wasValid end
+		return false
+	end
+	--ensure the player hasn't moved too far away while the action was in queue
+	local diffX = math.abs(item:getSquare():getX() + 0.5 - character:getX());
+	local diffY = math.abs(item:getSquare():getY() + 0.5 - character:getY());
+	return diffX <= 1.6 and diffY <= 1.6;
+end
+
+function ISDestroyStuffAction:isValid()
+	if ISBuildMenu.cheat then return true end
+	return self:hasSledgehammerInRange(self.character, self.item)
+end
+
+function ISDestroyStuffAction:waitToStart()
+	self.character:faceThisObject(self.item)
+	return self.character:shouldBeTurning()
+end
+
+function ISDestroyStuffAction:update()
+	self.character:faceThisObject(self.item);
+--	if self.spriteFrame < 5 and self.character:getSpriteDef():getFrame() >= 5 then
+--		getSoundManager():PlayWorldSound("breakdoor", false, self.item:getSquare(), 1, 20, 1, false)
+--        self.item:getSquare():playSound("HitObjectWithSledgehammer");
+--        addSound(self.character, self.character:getX(), self.character:getY(), self.character:getZ(), 20, 10)
+--	end
+	self.spriteFrame = self.character:getSpriteDef():getFrame();
+    self.character:setMetabolicTarget(Metabolics.HeavyWork);
+end
+
+function ISDestroyStuffAction:start()
+	if self.item == nil then
+		return
+	end
+	if not self.sledge then
+		self.sledge = self.character:getPrimaryHandItem();
+	end
+	if self.item:getProperties():has(IsoFlagType.solidfloor) then
+		self:setActionAnim("DestroyFloor")
+	else
+		self:setActionAnim(CharacterActionAnims.Destroy)
+	end
+--	getSoundManager():PlaySound("breakdoor", false, 1);
+	-- add a sound to the list so zombie/npc can hear it
+	addSound(self.character, self.character:getX(),self.character:getY(),self.character:getZ(), 20, 10);
+end
+
+function ISDestroyStuffAction:stop()
+    ISBaseTimedAction.stop(self);
+end
+
+function ISDestroyStuffAction:perform()
+    if instanceof(self.item, "IsoThumpable") then
+        self.character:playSound(self.item:getBreakSound())
+    else
+        self.character:playSound(IsoThumpable.GetBreakFurnitureSound(self.item:getSprite()))
+    end
+
+    -- needed to remove from queue / start next.
+	ISBaseTimedAction.perform(self);
+end
+
+function ISDestroyStuffAction:getCornerWallSprite(wallSprite)
+	if self.cornerCounter == DESTROY_NORTH and wallSprite:getProperties():has("CornerWestWall") then
+		return wallSprite:getProperties():get("CornerWestWall")
+	elseif self.cornerCounter == DESTROY_WEST and wallSprite:getProperties():get("CornerNorthWall") then
+		return wallSprite:getProperties():get("CornerNorthWall")
+	end
+	return nil
+end
+
+function ISDestroyStuffAction:animEvent(event, parameter)
+	if event == "PlaySwingSound" then
+		local sledge = self.character:getPrimaryHandItem();
+		self.character:playSound(sledge:getSwingSound())
+	end
+	if event == "PlayHitSound" then
+		local sledge = self.character:getPrimaryHandItem();
+		if not instanceof(sledge, "HandWeapon") then return end
+		-- FIXME: Pick an appropriate value for hit surface.
+		self.character:setMeleeHitSurface("Default")
+		self.character:playSound(sledge:getDoorHitSound())
+        self.character:addCombatMuscleStrain(sledge)
+	end
+end
+
+function ISDestroyStuffAction:complete()
+	if self.item == nil then
+		return false
+	end
+
+	if not self.character:isBuildCheat() and not self:hasSledgehammerInRange(self.character, self.item) then
+		return false
+	end
+
+	if getServerOptions():getBoolean("SledgehammerOnlyInSafehouse") then
+		local role = self.character:getRole()
+		local isPrivileged = role and role:hasCapability(Capability.UseBuildCheat)
+		if not isPrivileged then
+			local safe = SafeHouse.isSafeHouse(self.item:getSquare(), nil, false)
+			if not (safe and safe:playerAllowed(self.character)) then
+				return false
+			end
+		end
+	end
+
+	-- we add the items contained inside the item we destroyed to put them randomly on the ground
+	self.item:dumpContentsInSquare()
+-- 	for i=1,self.item:getContainerCount() do
+-- 		local container = self.item:getContainerByIndex(i-1)
+-- 		for j=1,container:getItems():size() do
+-- 			self.item:getSquare():AddWorldInventoryItem(container:getItems():get(j-1), 0.0, 0.0, 0.0)
+-- 		end
+-- 	end
+
+	-- corner walls need special handling, so this sets up ordinary walls to work with that handling to simplify things
+	local wallW = self.item:getSquare():getWall(false)
+	local wallN = self.item:getSquare():getWall(true)
+	if wallW ~= self.item and wallN ~= self.item then --no wall
+		self.cornerCounter = -1
+	elseif wallW == self.item and wallN ~= self.item then --west wall only
+		self.cornerCounter = DESTROY_WEST
+	elseif wallW ~= self.item and wallN == self.item then --north wall only
+		self.cornerCounter = DESTROY_NORTH
+	end
+
+	-- destroy window if wall is destroyed
+	if self.cornerCounter == DESTROY_WEST or self.cornerCounter == DESTROY_NORTH then
+		for i=0,self.item:getSquare():getSpecialObjects():size()-1 do
+			local o = self.item:getSquare():getSpecialObjects():get(i)
+			if instanceof(o, 'IsoWindow') and (o:getNorth() == (self.cornerCounter == DESTROY_NORTH)) then
+				self.item = o
+				break
+			end
+		end
+	end
+
+	-- destroy attached objects on same square if wall is destroyed
+	if self.cornerCounter == DESTROY_WEST or self.cornerCounter == DESTROY_NORTH then
+		for i=0,self.item:getSquare():getObjects():size()-1 do
+			local o = self.item:getSquare():getObjects():get(i)
+			if o:hasProperty(IsoFlagType.attachedW) and (self.cornerCounter == DESTROY_WEST) then
+				o:getSquare():transmitRemoveItemFromSquare(o)
+				o:getSquare():RemoveTileObject(o)
+				break
+			end
+			if o:hasProperty(IsoFlagType.attachedN) and (self.cornerCounter == DESTROY_NORTH) then
+				o:getSquare():transmitRemoveItemFromSquare(o)
+				o:getSquare():RemoveTileObject(o)
+				break
+			end
+		end
+	end
+
+	-- destroy attached objects on adjacent square if wall is destroyed [other side of wall]
+	if self.cornerCounter == DESTROY_WEST or self.cornerCounter == DESTROY_NORTH then
+		local Nsquare,Wsquare
+		if self.cornerCounter == DESTROY_NORTH then Nsquare = self.item:getSquare():getAdjacentSquare(IsoDirections.N) end
+		if self.cornerCounter == DESTROY_WEST then Wsquare = self.item:getSquare():getAdjacentSquare(IsoDirections.W) end
+		if Nsquare ~= nil then
+			for i=0,Nsquare:getObjects():size()-1 do
+				local o = Nsquare:getObjects():get(i)
+				if o:getProperties():has(IsoFlagType.attachedS) then
+					o:getSquare():transmitRemoveItemFromSquare(o)
+					o:getSquare():RemoveTileObject(o)
+					break
+				end
+			end
+		end
+		if Wsquare ~= nil then
+			for i=0,Wsquare:getObjects():size()-1 do
+				local o = Wsquare:getObjects():get(i)
+				if o:getProperties():has(IsoFlagType.attachedE) then
+					o:getSquare():transmitRemoveItemFromSquare(o)
+					o:getSquare():RemoveTileObject(o)
+					break
+				end
+			end
+		end
+	end
+
+	-- destroy barricades if door or window is destroyed
+	if instanceof(self.item, 'IsoDoor') or (instanceof(self.item, 'IsoThumpable') and self.item:isDoor()) or
+			instanceof(self.item, 'IsoWindow') then
+		local barricade1 = self.item:getBarricadeOnSameSquare()
+		local barricade2 = self.item:getBarricadeOnOppositeSquare()
+		if barricade1 then
+			barricade1:getSquare():transmitRemoveItemFromSquare(barricade1)
+			barricade1:getSquare():RemoveTileObject(barricade1)
+		end
+		if barricade2 then
+			barricade2:getSquare():transmitRemoveItemFromSquare(barricade2)
+			barricade2:getSquare():RemoveTileObject(barricade2)
+		end
+	end
+
+	-- remove curtains if window is destroyed
+	if instanceof(self.item, 'IsoWindow') and self.item:HasCurtains() then
+		local curtains = self.item:HasCurtains()
+		curtains:getSquare():transmitRemoveItemFromSquare(curtains)
+		local sheet = instanceItem("Base.Sheet")
+		self.item:getSquare():AddWorldInventoryItem(sheet, 0, 0, 0)
+	end
+	-- remove sheet rope too
+	if instanceof(self.item, 'IsoWindow') or instanceof(self.item, 'IsoThumpable') then
+		self.item:removeSheetRope(nil);
+	end
+
+	-- remove hutch
+	if instanceof(self.item, "IsoHutch") then
+		self.item:removeHutch();
+		return true;
+	end
+
+	if instanceof(self.item, "IsoButcherHook") then
+		self.item:removeHook();
+		return true;
+	end
+
+	if instanceof(self.item, 'IsoCurtain') and self.item:getSquare() then
+		local sheet = instanceItem("Base.Sheet")
+		self.item:getSquare():AddWorldInventoryItem(sheet, 0, 0, 0)
+	end
+
+	-- toggle off if it was a generator
+	if instanceof(self.item, 'IsoGenerator') then
+		self.item:setActivated(false);
+	end
+
+	local sq = self.item:getSquare()
+	local campfire = SCampfireSystem.instance:getLuaObjectOnSquare(sq)
+	if campfire ~= nil and campfire.isLit and campfire:getIsoObject() == self.item then
+		for i = 0,sq:getObjects():size()-1 do
+			local fireObj = sq:getObjects():get(i)
+			if instanceof(fireObj, 'IsoFire') and fireObj:isPermanent() then
+				sq:transmitRemoveItemFromSquare(fireObj)
+				sq:getProperties():unset(IsoFlagType.burning)
+			end
+		end
+	end
+
+	-- Destroy all 3 stair objects (and sometimes the floor at the top)
+	local stairObjects = buildUtil.getStairObjects(self.item)
+	-- Destroy all 4 double-door objects
+	local doubleDoorObjects = buildUtil.getDoubleDoorObjects(self.item)
+	local garageDoorObjects = buildUtil.getGarageDoorObjects(self.item)
+	local graveObjects = buildUtil.getGraveObjects(self.item)
+	if #stairObjects > 0 then
+		for i=1,#stairObjects do
+			if isClient() then
+				sledgeDestroy(stairObjects[i]);
+			else
+				stairObjects[i]:getSquare():transmitRemoveItemFromSquare(stairObjects[i])
+			end
+		end
+	elseif #doubleDoorObjects > 0 then
+		for i=1,#doubleDoorObjects do
+			if isClient() then
+				sledgeDestroy(doubleDoorObjects[i]);
+			else
+				doubleDoorObjects[i]:getSquare():transmitRemoveItemFromSquare(doubleDoorObjects[i])
+			end
+		end
+	elseif #garageDoorObjects > 0 then
+		for i=1,#garageDoorObjects do
+			local object = garageDoorObjects[i]
+			if isClient() then
+				sledgeDestroy(object)
+			else
+				object:getSquare():transmitRemoveItemFromSquare(object)
+			end
+		end
+	elseif #graveObjects > 0 then
+		for i=1,#graveObjects do
+			if isClient() then
+				sledgeDestroy(graveObjects[i]);
+			else
+				graveObjects[i]:getSquare():transmitRemoveItemFromSquare(graveObjects[i])
+			end
+		end
+	else
+		if isClient() then
+			sledgeDestroy(self.item);
+		else
+			if self.item:getSprite():getProperties():has("CornerNorthWall") then
+
+				local sq = self.item:getSquare()
+				local objNew = IsoObject.getNew(sq, self:getCornerWallSprite(self.item:getSprite()), self:getCornerWallSprite(self.item:getSprite()), false);
+				objNew:setAttachedAnimSprite(ArrayList:new())
+				local index = self.item:getObjectIndex();
+
+				--attached sprites
+				if self.item:getAttachedAnimSprite() ~= nil and not self.item:getAttachedAnimSprite():isEmpty() then
+					for i=1,self.item:getAttachedAnimSprite():size() do
+						local attachedSprite = self:getCornerWallSprite(self.item:getAttachedAnimSprite():get(i-1):getParentSprite())
+						if attachedSprite ~= nil then
+							objNew:getAttachedAnimSprite():add(getSprite(attachedSprite):newInstance())
+						end
+					end
+				end
+				--print(objNew)
+
+				sq:transmitRemoveItemFromSquare(self.item);
+				sq:transmitAddObjectToSquare(objNew, index);
+			else --not a corner wall, just remove it
+				self.item:getSquare():transmitRemoveItemFromSquare(self.item)
+			end
+		end
+	end
+
+	-- add a sound to the list so zombie/npc can hear it
+	addSound(self.character, self.character:getX(),self.character:getY(),self.character:getZ(), 10, 10);
+	-- reduce the sledge condition
+	if not self.character:isBuildCheat() then
+		local sledge = self.character:getPrimaryHandItem();
+		if sledge and sledge:damageCheck(0,2,false) then
+			ItemUtils.checkWeapon(self.character)
+	    end
+-- 		if sledge and ZombRand(sledge:getConditionLowerChance() * 2) == 0 then
+-- 			sledge:setCondition(sledge:getCondition() - 1);
+-- 			ItemUtils.checkWeapon(self.character);
+-- 		end
+	end
+
+	return true;
+end
+
+function ISDestroyStuffAction:getDuration()
+	if self.character:isTimedActionInstant() or self.character:isBuildCheat() then
+		return 1;
+	end
+	return 300 - (self.character:getPerkLevel(Perks.Strength) * 10);
+end
+
+function ISDestroyStuffAction:new(character, item, cornerCounter)
+--     print('DESTROYING STUFF _ NEW')
+	local o = ISBaseTimedAction.new(self, character)
+	o.item = item;
+	o.cornerCounter = -1;
+	if cornerCounter ~= nil then
+		o.cornerCounter = cornerCounter;
+	end
+	o.maxTime = o:getDuration();
+	o.spriteFrame = 0
+	o.caloriesModifier = 8;
+	return o;
+end

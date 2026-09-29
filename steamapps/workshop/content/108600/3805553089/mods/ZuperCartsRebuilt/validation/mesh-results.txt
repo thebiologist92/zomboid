@@ -1,0 +1,4 @@
+FILE D:\.codex\2026-09-20\this\work\update-0.2.0\42\media\models_x\weapons\2handed\zcr_dolly_v2.glb
+MESH zcr_dolly vertices 1248 min [-1.2400000095367432, 0.009999999776482582, -0.671999990940094] max [0.10000000149011612, 2.0840001106262207, 0.671999990940094] UV True normals True
+FILE D:\.codex\2026-09-20\this\work\update-0.2.0\42\media\models_x\weapons\2handed\zcr_dolly_full_v2.glb
+MESH zcr_dolly_full vertices 1344 min [-1.2400000095367432, 0.009999999776482582, -0.671999990940094] max [0.15000000596046448, 2.0840001106262207, 0.671999990940094] UV True normals True

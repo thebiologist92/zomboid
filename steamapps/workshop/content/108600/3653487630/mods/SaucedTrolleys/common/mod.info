@@ -1,0 +1,7 @@
+name=SaucedTrolleys - Custom Carts
+id=SaucedTrolleys
+description=Adds trolley cart types using the SaucedCarts framework.
+poster=poster.png
+modversion=1.0.2
+versionmin=42.13.1
+require=\SaucedCarts

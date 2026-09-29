@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE martif PUBLIC "ISO 12200:1999A//DTD MARTIF core (DXFcdV04)//EN" "TBXcdv04.dtd">
+<martif type="TBX" xml:lang="en">
+    <martifHeader>
+        <fileDesc>
+            <sourceDesc>
+                <p>Weblate Glossary</p>
+            </sourceDesc>
+        </fileDesc>
+    </martifHeader>
+    <text>
+        <body>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>workstation</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>banc de treball</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Cáñamo">
+                <langSet xml:lang="en"><tig><term>Burlap</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Arpillera</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Destral a una mà, de menor mida que la destral normal.">
+                <langSet xml:lang="en"><tig><term>Hatchet</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Destral de mà</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Eina: oriental. Ferramenta: occidental">
+                <langSet xml:lang="en"><tig><term>Tool</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Ferramenta</term></tig></langSet>
+            </termEntry>
+            <termEntry id="En les descripcions de pel·lícules">
+                <langSet xml:lang="en"><tig><term>Swearing</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Llenguatge obscé</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Fanny pack</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Renyonera</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>God-damn</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Maleït</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Dels collons si modifica un nom. Merda si modifica una altra cosa.">
+                <langSet xml:lang="en"><tig><term>Fucking</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Dels collons/Merda</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Asshole</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Imbècil</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Fuck</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Hòstia</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Motherfucker</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Imbècil</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Barley</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Ordi</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Oats</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Avena</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Diferenciar fil d'aram de filat espinós">
+                <langSet xml:lang="en"><tig><term>barbed wire</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Filat espinós</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Diferenciem caixa (box) i caixó (carton), molt més gran el segon">
+                <langSet xml:lang="en"><tig><term>Carton</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Caixó</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Pot de vidre per a verdura en conserva casolana. No confondre amb llanda (pot d'alumini)">
+                <langSet xml:lang="en"><tig><term>jar</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>pot</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Chum</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Atraient</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>furred</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>amb pèl</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>leather</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>cuiro</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>hide</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>pell</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>unprocessed</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>sense processar</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>cudgel</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>porra</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>heckle</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>cardar</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>ripple</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>desgranar</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>scutch</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>espadar</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Català barret. Valencià capell">
+                <langSet xml:lang="en"><tig><term>hat</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>capell</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>rye</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>ségol</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>saucepan</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>perol</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>screwdriver</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>descaragolador</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>crafted</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>artesanal</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Si és de paper, fulla. Si és metall, planxa.">
+                <langSet xml:lang="en"><tig><term>sheet</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>planxa</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Knee-length Skirt</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>Falda pel genoll</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>antique</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>clàssic</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>remove</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>llevar</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>delete</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>eliminar</term></tig></langSet>
+            </termEntry>
+            <termEntry id="arma a llança">
+                <langSet xml:lang="en"><tig><term>attach</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>enganxar</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>crude</term></tig></langSet>
+                <langSet xml:lang="CA"><tig><term>simple</term></tig></langSet>
+            </termEntry>
+        </body>
+    </text>
+</martif>

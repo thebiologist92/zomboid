@@ -1,0 +1,1513 @@
+/* text styling */
+body {
+  font-family: LondrinaSolidRegular, Arial;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+  line-height: 120%;
+}
+p {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 1.2px;
+}
+a {
+  color: #00b7e5;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+/* text format styling */
+ul {
+  list-style: none;
+}
+ol {
+  list-style: none;
+}
+/* other tags */
+input,
+textarea {
+  font-family: LondrinaSolidRegular, Arial;
+  font-size: 16px;
+}
+/* rename */
+@font-face {
+  font-family: 'KomikaDisplayRegular';
+  src: url('../fonts/Komika_display-webfont.eot');
+  src: url('../fonts/Komika_display-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Komika_display-webfont.woff') format('woff'), url('../fonts/Komika_display-webfont.ttf') format('truetype'), url('../fonts/Komika_display-webfont.svg#KomikaDisplayRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KomikaDisplayKapsBold';
+  src: url('../fonts/Komika_display_kaps_bold-webfont.eot');
+  src: url('../fonts/Komika_display_kaps_bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Komika_display_kaps_bold-webfont.woff') format('woff'), url('../fonts/Komika_display_kaps_bold-webfont.ttf') format('truetype'), url('../fonts/Komika_display_kaps_bold-webfont.svg#KomikaDisplayKapsBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LondrinaSolidRegular';
+  src: url('../fonts/LondrinaSolid-Regular-webfont.eot');
+  src: url('../fonts/LondrinaSolid-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/LondrinaSolid-Regular-webfont.woff') format('woff'), url('../fonts/LondrinaSolid-Regular-webfont.ttf') format('truetype'), url('../fonts/LondrinaSolid-Regular-webfont.svg#LondrinaSolidRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+/* structure styling */
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+html {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+  background-attachment: fixed;
+  min-width: 1212px;
+}
+body {
+  padding: 0 12px 50px 12px;
+}
+article {
+  display: block;
+}
+header {
+  display: block;
+}
+nav {
+  display: block;
+}
+footer {
+  clear: both;
+  display: block;
+}
+div {
+  display: block;
+}
+.container {
+  margin: 0 auto 0 auto;
+  position: relative;
+}
+.bodyContent aside,
+.bodyContentList aside,
+.bodyContentArticle aside {
+  float: right;
+}
+.bodyContent aside article,
+.bodyContentList aside article,
+.bodyContentArticle aside article,
+.bodyContent aside section,
+.bodyContentList aside section,
+.bodyContentArticle aside section {
+  margin: 0 0 12px 0;
+}
+.bodyContent aside {
+  /*      min-height: 1500px;*/
+
+  width: 215px;
+}
+.bodyContent > article,
+.bodyContentList > article,
+.bodyContent > section,
+.bodyContentList > section {
+  float: left;
+  margin: 0 12px 12px 0;
+}
+.bodyContentListContainer > article,
+.bodyContentListContainer > section {
+  float: left;
+  margin: 0 12px 122px 0;
+}
+.bodyContentList aside,
+.bodyContentArticle aside {
+  width: 288px;
+}
+.bodyContentListHeader,
+.bodyContentArticle .blogArticle {
+  margin: 0 300px 0 0;
+}
+.contentSplat {
+  height: 500px;
+  position: absolute;
+  width: 500px;
+  z-index: -10;
+}
+.contentSplat.one {
+  top: 600px;
+  left: 2%;
+}
+.contentSplat.two {
+  top: 1000px;
+  right: 5%;
+}
+.clearfix {
+  clear: both;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.headerStrap {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+  height: 50px;
+  margin: -4px 0 6px 0;
+  width: 100%;
+}
+.headerStrap.comicbox .content {
+  padding: 12px 13px 12px 12px;
+}
+.headerStrap h1 {
+  float: left;
+  margin: 0 0 0 0;
+  color: #ffffff;
+  font-family: KomikaDisplayKapsBold, Arial;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 1.2px;
+}
+.headerStrap h2 {
+  margin: 0 0 0 0;
+  padding: 0 5px 0 0;
+  color: #ffffff;
+  font-family: KomikaDisplayKapsBold, Arial;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 1.2px;
+}
+.headerStrap ul {
+  float: right;
+}
+.headerStrap li {
+  float: left;
+  padding: 0 0 0 4px;
+}
+.headerStrap a {
+  background-image: url('../images/spriteSocial.png');
+  background-repeat: no-repeat;
+  display: block;
+  height: 25px;
+  width: 25px;
+  text-indent: -9999px;
+}
+.headerStrap .linkReddit {
+  background-position: 0 0;
+}
+.headerStrap .linkFacebook {
+  background-position: -25px 0;
+}
+.headerStrap .linkTwitter {
+  background-position: -50px 0;
+}
+.headerStrap .linkYouTube {
+  background-position: -75px 0;
+}
+.headerBanner {
+  height: 208px;
+  margin: 0 0 6px 0;
+  width: 100%;
+  vertical-align: top;
+}
+.headerBanner .spacer {
+  width: 10px;
+}
+.headerBanner > section {
+  float: left;
+}
+.headerGame {
+  margin: 0 6px 0 0;
+  height: 208px;
+  width: 967px;
+}
+.headerGame.comicbox .content {
+  padding: 2px 2px 2px 2px;
+  vertical-align: top;
+}
+.headerGame .background img {
+  top: 0;
+  left: 0;
+}
+.headerGame ul {
+  right: 50px;
+  overflow: hidden;
+  position: absolute;
+  top: 30px;
+  width: 170px;
+  z-index: 20;
+}
+.headerGame li {
+  padding: 2px 2px 2px 2px;
+}
+.headerCompany {
+  height: 208px;
+  width: 215px;
+}
+.headerCompany .background div {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.headerCompany.comicbox .content {
+  padding: 2px 2px 2px 2px;
+}
+.headerSplat {
+  position: absolute;
+  top: 0;
+  left: 30%;
+  z-index: 10;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.container nav {
+  clear: both;
+  height: 50px;
+  margin: 0 0 6px 0;
+  width: 100%;
+}
+.container nav.comicbox .background {
+  height: 45px;
+}
+.container nav.comicbox .background div {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.container nav.comicbox .content {
+  padding: 5px 5px 5px 5px;
+}
+.container nav ul {
+  position: absolute;
+  z-index: 20;
+}
+.container nav li {
+  float: left;
+  z-index: 100;
+}
+.container nav li.first {
+  padding: 0 0 0 10px;
+}
+.container nav li.last {
+  padding: 0 5px 0 0;
+}
+.container nav a {
+  display: block;
+  padding: 10px 15px 10px 20px;
+  z-index: inherit;
+  color: #ffffff;
+  font-family: KomikaDisplayKapsBold, Arial;
+  text-transform: uppercase;
+}
+.container nav form {
+  float: right;
+}
+.searchForm {
+  padding: 5px 5px 5px 5px;
+}
+.searchForm input {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+  border: 1px solid #000;
+  padding: 5px 10px 5px 10px;
+  width: 185px;
+  font-size: 16px;
+}
+.searchForm input::-webkit-input-placeholder {
+  color: #000;
+}
+.searchForm input:-moz-placeholder {
+  color: #000;
+}
+.searchForm input:-ms-input-placeholder {
+  color: #000;
+}
+.navActiveSplat {
+  display: inline;
+  left: 24px;
+  position: absolute;
+  top: 257px;
+  z-index: 10;
+}
+.list .navActiveSplat,
+.article .navActiveSplat {
+  left: 290px;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.container > footer {
+  padding: 20px 0 0 0;
+}
+.container > footer ul {
+  float: right;
+}
+.container > footer li {
+  float: left;
+  padding: 5px 5px 5px 5px;
+}
+.container > footer li:after {
+  content: ' |';
+}
+.container > footer li.last:after {
+  content: '';
+}
+.container > footer li,
+.container > footer a {
+  font-family: KomikaDisplayKapsBold, Arial;
+  font-size: 16px;
+  color: #222222;
+}
+.container > footer div {
+  float: left;
+  display: inline;
+  padding: 5px 5px 5px 0;
+  max-width: 300px;
+}
+.linkFooterOlderPosts {
+  font-size: 24px;
+}
+.comicbox {
+  position: relative;
+}
+.comicbox > .background {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.comicbox > .background div {
+  height: 98%;
+  margin: 3px 3px 3px 3px;
+}
+.comicbox > .background img {
+  margin: 0 3px 3px 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.comicbox > .content {
+  overflow: hidden;
+  padding: 15px 15px 15px 15px;
+  position: relative;
+}
+.comicbox > .border {
+  background-image: url('../images/outlineBoxTL.png'), url('../images/outlineBoxT.png'), url('../images/outlineBoxTR.png'), url('../images/outlineBoxR.png'), url('../images/outlineBoxBR.png'), url('../images/outlineBoxB.png'), url('../images/outlineBoxBL.png'), url('../images/outlineBoxL.png');
+  background-position: top left,
+        31px 0,
+        top right,
+        top right,
+        bottom right,
+        bottom left,
+        bottom left,
+        top left;
+  background-repeat: no-repeat, repeat-x, no-repeat, repeat-y, no-repeat, repeat-x, no-repeat, repeat-y;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.comictext {
+  position: relative;
+}
+.comictext > .background {
+  height: 98%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.comictext > .background div,
+.comictext > .background img {
+  margin: 3px 3px 0 3px;
+}
+.comictext > .background div {
+  height: 98%;
+}
+.comictext > .content {
+  overflow: hidden;
+  padding: 12px 15px 15px 15px;
+  position: relative;
+}
+.comictext > .border {
+  background-image: url('../images/outlineTextTL.png'), url('../images/outlineTextT.png'), url('../images/outlineTextTR.png'), url('../images/outlineTextR.png'), url('../images/outlineTextBR.png'), url('../images/outlineTextB.png'), url('../images/outlineTextBL.png'), url('../images/outlineTextL.png');
+  background-position: top left,
+        31px 0,
+        top right,
+        top right,
+        bottom right,
+        bottom left,
+        bottom left,
+        top left;
+  background-repeat: no-repeat, repeat-x, no-repeat, repeat-y, no-repeat, repeat-x, no-repeat, repeat-y;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.comictext.type,
+.comictext.title,
+.comictext.tag {
+  display: inline-block;
+  float: left;
+  clear: left;
+}
+.comictext.type {
+  margin: 2px 0 0 0;
+}
+.comictext.type .background div {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+  height: 95%;
+}
+.comictext.title {
+  margin: -5px 0 0 0;
+  max-width: 90%;
+  min-width: 25%;
+}
+.comictext.title .background div {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+  height: 93%;
+}
+.comictext.tag {
+  margin: -5px 0 0 0;
+}
+.comictext.tag .background div {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+  height: 80%;
+  overflow: hidden;
+}
+.comictext.image {
+  display: inline-block;
+  margin: 20px auto 20px auto;
+}
+.comictext.image .background {
+  background-color: #ffffff;
+  margin: 0 auto 0 auto;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.comictext.image .content {
+  padding: 0 0 0 0;
+}
+.comictext.video {
+  display: inline-block;
+  margin: 20px auto 20px auto;
+}
+.comictext.video .background div {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+  height: 99%;
+}
+.comictext.video .content {
+  margin: 5px 5px 5px 5px;
+  padding: 0 0 0 0;
+}
+.comicstatic .background div {
+  background-repeat: repeat-y;
+  background-position: bottom right;
+  height: 100%;
+  padding: 2px 2px 2px 2px;
+}
+.bodyContent h1,
+.bodyContentArticle h1,
+.bodyContentList h1 {
+  margin: 0 0 0 0;
+  color: #831f21;
+  font-family: LondrinaSolidRegular, Arial;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 120%;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.bodyContent h1 a,
+.bodyContentArticle h1 a,
+.bodyContentList h1 a {
+  color: #831f21;
+  font-family: LondrinaSolidRegular, Arial;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.bodyContent h2,
+.bodyContentArticle h2,
+.bodyContentList h2 {
+  margin: 0 0 0 0;
+  color: #ffffff;
+  font-family: KomikaDisplayKapsBold, Arial;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.bodyContent h2 a,
+.bodyContentArticle h2 a,
+.bodyContentList h2 a {
+  color: #ffffff;
+  font-family: KomikaDisplayKapsBold, Arial;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.bodyContent h3,
+.bodyContentArticle h3,
+.bodyContentList h3 {
+  margin: 0 0 0 0;
+  color: #222222;
+  font-family: KomikaDisplayKapsBold, Arial;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 0;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+.bodyContent h3 a,
+.bodyContentArticle h3 a,
+.bodyContentList h3 a {
+  color: #222222;
+  font-family: KomikaDisplayKapsBold, Arial;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+.bodyContent p,
+.bodyContentArticle p,
+.bodyContentList p {
+  color: #222222;
+  font-family: LondrinaSolidRegular, Arial;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0px;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.boxBlog {
+  height: 291px;
+  width: 435px;
+}
+.boxBlog > .content {
+  padding: 0 0 0 0;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.boxBlogWide {
+  height: 291px;
+  width: 585px;
+}
+.boxBlogWide > .content {
+  padding: 0 0 0 0;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.boxCarousel {
+  height: 547px;
+  padding: 20px 0 0 0;
+  width: 661px;
+}
+.boxCarousel article > .content {
+  padding: 0 0 0 0;
+}
+.boxCarousel article {
+  height: 450px;
+  width: 660px;
+}
+.boxCarouselNav {
+  margin: -50px 0 0 0;
+  position: absolute;
+  z-index: 200;
+}
+.boxCarouselNav li {
+  float: left;
+  margin: 0 6px 0 6px;
+}
+.boxCarouselNavItem {
+  height: 138px;
+  width: 208px;
+}
+.boxCarouselNavItem .background {
+  height: 130px;
+  overflow: hidden;
+  padding: 2px;
+}
+.boxCarouselNavItem .border {
+  background-image: url('../images/borderCarousel.png');
+  background-repeat: no-repeat;
+  height: 138px;
+  position: absolute;
+  top: 0;
+  width: 208px;
+}
+.boxCarouselNavItem.active .border {
+  background-image: url('../images/borderCarouselActive.png');
+}
+.boxCarouselNavItem .content {
+  padding: 12px 10px 8px 20px;
+  position: absolute;
+  top: 0;
+  width: 120px;
+}
+.boxCarouselNavItem .content h1 {
+  color: #ffffff;
+  font-family: KomikaDisplayKapsBold, Arial;
+  font-size: 18px;
+  letter-spacing: 1.2px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.boxCTA > article {
+  height: 139px;
+  width: 288px;
+}
+.boxCTA > article.first {
+  margin: 0 0 12px 0;
+}
+.boxCTA .content {
+  padding: 4px 4px 4px 4px;
+}
+.boxCTA a {
+  display: block;
+  height: 127px;
+  width: 280px;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.boxSquare {
+  height: 291px;
+  width: 288px;
+}
+.boxSquare > .content {
+  padding: 0 0 0 0;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.boxTall {
+  height: 594px;
+  width: 215px;
+}
+.boxTall.first .background div {
+  background-image: url('../images/imageTallFirst.jpg');
+  background-position: right top;
+  background-position-y: -200px;
+}
+.boxTall.second {
+  height: 594px;
+}
+.boxTall.second .background div {
+  background-image: url('../images/imageTallSecond.jpg');
+  background-position: right top;
+  background-position-y: -200px;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.boxTallWide {
+  width: 288px;
+}
+.boxTallWide.first > .background div {
+  background-image: url('../images/imageTallFirst.jpg');
+}
+.boxTallWide.second {
+  min-height: 594px;
+}
+.boxTallWide.second > .background div {
+  background-image: url('../images/imageTallSecond.jpg');
+}
+.boxTallWide > .content {
+  padding: 4px 4px 4px 4px;
+}
+.boxTallWide .type {
+  margin: -2px 0 0 -2px;
+}
+.boxTallWide ul {
+  clear: left;
+  padding: 4px 0 20px 0;
+}
+.boxTallWide li {
+  padding: 0 0 4px 0;
+}
+.boxTallWide li a {
+  display: inline-block;
+  background-color: #245581;
+  padding: 10px 10px 10px 10px;
+  color: #ffffff;
+  font-size: 24px;
+}
+.boxTallWide li ul {
+  padding: 4px 0 0 0;
+}
+.boxTallWide li li {
+  padding: 0 0 4px 10px;
+}
+.bodyContentArticle .boxTallWide {
+  height: 586px;
+}
+.the-game .bodyContentArticle .boxTallWide {
+  height: auto;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.boxTweet {
+  height: 291px;
+  width: 210px;
+}
+.boxTweet > .background div {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.boxTweet > .content {
+  padding: 0 0 0 0;
+}
+.boxTweet .title {
+  width: 100%;
+}
+.boxTweet .title h1 {
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+.boxTweet .title h1 a {
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.boxListIntro > .content {
+  padding: 0 0 0 0;
+}
+.boxListIntro > .heading {
+  height: 173px;
+}
+.boxListIntro > .heading .background {
+  background-color: #000;
+}
+.boxListIntro > .heading h1 {
+  color: #ffffff;
+  text-shadow: 2px 2px 2px #000000;
+  font: 40px KomikaDisplayKapsBold, Arial;
+}
+.boxListIntro > .featured {
+  float: left;
+  height: 173px;
+  margin: -60px 10px 20px 10px;
+  width: 256px;
+}
+.boxListIntro .comictext.title {
+  margin: 20px 0 0 0;
+}
+.bodyContentArticle .boxListIntro.stub,
+.bodyContentArticle .boxListIntro.stub .heading,
+.bodyContentArticle .boxListIntro,
+.bodyContentArticle .boxListIntro .heading {
+  margin-bottom: 20px;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.boxListArticle {
+  height: 293px;
+  width: 438px;
+}
+.boxListArticle .comictext.title {
+  margin: 30px 0 0 0;
+}
+.boxListArticle > .content {
+  padding: 0 0 0 0;
+}
+.boxListArticle .introduction {
+  height: 135px;
+  left: 20px;
+  position: absolute;
+  top: 260px;
+  width: 402px;
+}
+.boxListArticle .introduction .background div {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.boxListArticle .introduction .content {
+  height: 104px;
+  position: relative;
+}
+.boxListArticle .introduction .content p {
+  font-family: Arial;
+  font-size: 14px;
+}
+.boxListArticle .introduction .content > a {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+  bottom: 0;
+  padding: 5px 10px 5px 10px;
+  position: absolute;
+  right: 4px;
+  color: #ffffff;
+  font-family: KomikaDisplayKapsBold, Arial;
+  text-transform: uppercase;
+}
+.bodyContentList .boxListArticle {
+  margin: 0 12px 112px 0;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.boxArticleContent {
+  margin: 0 0 20px 0;
+  width: 720px;
+}
+.boxArticleContent .background div {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+  height: 100%;
+}
+.boxArticleContent h2 {
+  padding: 10px 10px 10px 10px;
+  color: #222222;
+  font-family: LondrinaSolidRegular, Arial;
+  font-size: 40px;
+  letter-spacing: 1px;
+  line-height: 120%;
+  text-transform: none;
+}
+.boxArticleContent h3 {
+  padding: 10px 10px 10px 10px;
+  color: #222222;
+  font-family: LondrinaSolidRegular, Arial;
+  font-size: 28px;
+  letter-spacing: 1px;
+  line-height: 120%;
+  text-transform: none;
+}
+.boxArticleContent p {
+  padding: 10px 10px 10px 10px;
+  font-family: Arial;
+  font-size: 16px;
+}
+.boxArticleContent a {
+  color: #8d2123;
+}
+.boxArticleContent a:hover {
+  text-decoration: underline;
+}
+.blogArticleSpecial {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+  margin: 0 0 0 60px;
+  width: 720px;
+}
+.blogArticleSpecial h1 {
+  padding: 10px 10px 10px 10px;
+  color: #222222;
+  font-family: LondrinaSolidRegular, Arial;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: 120%;
+  text-transform: none;
+}
+.blogArticleSpecial h2 {
+  clear: left;
+  padding: 10px 10px 10px 10px;
+  color: #222222;
+  font-family: LondrinaSolidRegular, Arial;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: 120%;
+  text-transform: none;
+}
+.blogArticleSpecial h3 {
+  clear: left;
+  padding: 10px 10px 10px 10px;
+  color: #222222;
+  font-family: LondrinaSolidRegular, Arial;
+  font-size: 28px;
+  letter-spacing: 0;
+  line-height: 120%;
+  text-transform: none;
+}
+.blogArticleSpecial p {
+  padding: 10px 10px 10px 10px;
+  font-family: Arial;
+  font-size: 18px;
+}
+.blogArticleSpecial a {
+  color: #8d2123;
+  font-family: KomikaDisplayKapsBold, Arial;
+  font-style: italic;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+.blogArticleSpecial img {
+  display: block;
+  margin: 10px auto 10px auto;
+}
+.blogArticleSpecial .articleImageLinks {
+  width: 620px;
+  margin: 10px auto 10px auto;
+}
+.blogArticleSpecial .articleImageLinks a {
+  display: inline-block;
+  float: left;
+  margin: 0 10px 0 0;
+  width: 300px;
+}
+.blogArticleSpecial .articleImageLinks div {
+  clear: both;
+}
+.teamMember,
+.articlePromo {
+  display: inline-block;
+  float: left;
+  margin: 10px 10px 10px 5px;
+  min-height: 330px;
+  position: relative;
+  width: 215px;
+}
+.teamMember .comictext.title,
+.articlePromo .comictext.title {
+  min-height: 50px;
+  position: absolute;
+  top: 0;
+  width: 180px;
+  z-index: 3;
+}
+.teamMember .comictext.title .background,
+.articlePromo .comictext.title .background {
+  height: 97%;
+}
+.teamMember .comictext.title .content,
+.articlePromo .comictext.title .content {
+  padding: 3px 0 0 5px;
+}
+.teamMember .comictext.title .content h3,
+.articlePromo .comictext.title .content h3 {
+  color: #831f21;
+  font-family: LondrinaSolidRegular, Arial;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: -1px;
+  text-transform: none;
+}
+.teamMember .comictext.photo,
+.articlePromo .comictext.photo {
+  height: 160px;
+  margin: -30px 0 0 10px;
+  position: absolute;
+  top: 50px;
+  width: 210px;
+  z-index: 2;
+}
+.teamMember .comictext.info,
+.articlePromo .comictext.info {
+  margin: -20px 0 0 0;
+  min-height: 150px;
+  position: absolute;
+  top: 180px;
+  width: 220px;
+  z-index: 1;
+}
+.teamMember .comictext.info .background,
+.articlePromo .comictext.info .background {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.teamMember .comictext.info .content,
+.articlePromo .comictext.info .content {
+  padding: 30px 18px 18px 18px;
+}
+.teamMember .comictext.info .content p,
+.articlePromo .comictext.info .content p {
+  padding: 0 0 5px 0;
+  font-family: Arial;
+  font-size: 16px;
+}
+.tileBody {
+  background: transparent url('../images/bgTileBody.png') repeat left top;
+}
+.tileBodySmall {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+}
+.tileBlack {
+  background: transparent url('../images/bgTileBlack.png') repeat left top;
+}
+.tileYellow {
+  background: transparent url('../images/bgTileYellow.png') repeat left top;
+}
+.tileRed {
+  background: transparent url('../images/bgTileRed.png') repeat left top;
+}
+.tileWhite {
+  background: transparent url('../images/bgTileWhite.jpg') repeat left top;
+}
+.tileBlue {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.bodyContentArticle .bodyContentListHeader {
+  margin: 0 300px 20px 0;
+}
+.blogArticle h1 {
+  padding: 0 0 5px 5px;
+  color: #222222;
+  font-family: LondrinaSolidRegular, Arial;
+  font-size: 50px;
+  letter-spacing: 1px;
+  line-height: 120%;
+  text-transform: none;
+}
+.boxArticleHeading {
+  height: 440px;
+  padding: 20px 0 0 0;
+  margin: 0 0 0 0;
+  position: relative;
+  width: 790px;
+}
+.boxArticleHeadingImage {
+  height: 460px;
+  left: 80px;
+  position: absolute;
+  top: 0;
+  width: 710px;
+}
+.boxArticleHeadingTitle {
+  float: left;
+  min-width: 100px;
+  max-width: 600px;
+  display: inline-block;
+}
+.boxArticleHeadingTitle .background div {
+  background: transparent url('../images/bgTileBodySmall.png') repeat left top;
+  height: 96%;
+}
+.boxArticleHeadingTag.comictext.tag {
+  margin: -3px 0 0 80px;
+}
+.boxArticleHeadingTag .content {
+  padding: 5px 10px 10px 10px;
+}
+.boxArticleHeadingTag h2 {
+  color: #222222;
+}
+.boxArticleHeadingTag h2 a {
+  color: #222222;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  line-height: 120%;
+}
+.boxArticleContainer {
+  margin: -40px 0 0 0;
+  padding: 0 0 100px 40px;
+  width: 720px;
+}
+.articleAuthor {
+  position: relative;
+  margin: 0 0 20px 0;
+  padding: 10px 0 0 0;
+}
+.articleAuthorInfo {
+  margin: 0 0 0 30px;
+  padding: 10px 0 20px 100px;
+  width: 590px;
+}
+.articleAuthorInfo > .background div {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.articleAuthorInfo h1 {
+  padding: 0 0 10px 0;
+  color: #ffffff;
+  font-family: KomikaDisplayKapsBold, Arial;
+  line-height: 120%;
+}
+.articleAuthorInfo h2 {
+  color: #ffffff;
+  font-family: KomikaDisplayKapsBold, Arial;
+  font-size: 28px;
+}
+.articleAuthorInfo a {
+  color: #e9e865;
+  font-family: KomikaDisplayKapsBold, Arial;
+}
+.articleAuthorImage {
+  position: absolute;
+  top: 0;
+  height: 120px;
+  width: 120px;
+}
+.articleCommentButton {
+  clear: both;
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+.articleSubscribe,
+.articleRelatedPosts {
+  float: left;
+  height: 150px;
+  padding: 0 0 0 0;
+  width: 350px;
+}
+.articleSubscribe > .background div,
+.articleRelatedPosts > .background div {
+  background: transparent url('../images/bgTileBlue.png') repeat left top;
+}
+.articleSubscribe .comictext.type,
+.articleRelatedPosts .comictext.type {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.articleSubscribe h4,
+.articleRelatedPosts h4 {
+  margin: 0 0 0 0;
+  color: white;
+  font-family: KomikaDisplayKapsBold, Arial;
+  font-size: 18px;
+  letter-spacing: 1.2px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.articleSubscribe a,
+.articleRelatedPosts a {
+  color: #e9e865;
+  font-family: KomikaDisplayKapsBold, Arial;
+}
+.articleSubscribe > .content,
+.articleRelatedPosts > .content {
+  padding: 70px 10px 10px 20px;
+}
+.articleSubscribe {
+  clear: both;
+  margin: 0 20px 0 0;
+}
+.articleNav {
+  clear: both;
+  padding: 20px 0 0 0;
+}
+.articleNav a {
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 330px;
+  color: #8d2123;
+  font-family: KomikaDisplayKapsBold, Arial;
+}
+.articleNav a.first {
+  background-image: url('../images/arrowLeft.png');
+  background-position: top left;
+  background-position-y: 3px;
+  float: left;
+  margin: 0 20px 0 0;
+  padding: 0 0 0 20px;
+}
+.articleNav a.last {
+  background-image: url('../images/arrowRight.png');
+  background-position: top right;
+  background-position-y: 3px;
+  float: left;
+  padding: 0 20px 0 0;
+  text-align: right;
+}
+@media screen and (min-width: 1650px) {
+  .container {
+    max-width: 1557px;
+  }
+  .headerGame {
+    width: 1336px;
+  }
+  .contentSplat.two {
+    top: 800px;
+    right: 12%;
+  }
+  .blogArticleSpecial {
+    margin: 0 0 0 250px;
+  }
+  .bodyContentArticle .blogArticle {
+    margin: 0 300px 20px 200px;
+  }
+  .bodyContentListContainer {
+    padding: 0 0 0 150px;
+  }
+}
+@media screen and (max-width: 1660px) {
+  .container {
+    max-width: 1188px;
+  }
+  .headerGame {
+    width: 967px;
+  }
+  .boxSquare.last {
+    display: none;
+  }
+}

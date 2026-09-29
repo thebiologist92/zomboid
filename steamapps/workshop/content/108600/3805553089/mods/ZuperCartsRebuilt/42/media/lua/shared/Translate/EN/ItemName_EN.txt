@@ -1,0 +1,14 @@
+ItemName_EN = {
+    ItemName_TMC.TrolleyContainer = "Platform Trolley",
+    ItemName_TMC.TrolleyContainer2 = "Platform Trolley",
+    ItemName_TMC.TrolleyContainerBlue = "Platform Trolley (Blue)",
+    ItemName_TMC.TrolleyContainerBlue2 = "Platform Trolley (Blue)",
+    ItemName_TMC.TrolleyContainerGray = "Platform Trolley (Gray)",
+    ItemName_TMC.TrolleyContainerGray2 = "Platform Trolley (Gray)",
+    ItemName_TMC.TrolleyContainerGreen = "Platform Trolley (Green)",
+    ItemName_TMC.TrolleyContainerGreen2 = "Platform Trolley (Green)",
+    ItemName_TMC.TrolleyContainerRed = "Platform Trolley (Red)",
+    ItemName_TMC.TrolleyContainerRed2 = "Platform Trolley (Red)",
+    ItemName_TMC.CartContainer = "Shopping Cart",
+    ItemName_TMC.CartContainer2 = "Shopping Cart",
+}

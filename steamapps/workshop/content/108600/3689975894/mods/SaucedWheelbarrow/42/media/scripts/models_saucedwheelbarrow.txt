@@ -1,0 +1,56 @@
+module Base
+{
+	model WheelbarrowWood
+    {
+        mesh = weapons/2handed/Wheelbarrow_wood|WoodenWheelbarrow.001,
+        texture = weapons/2handed/WheelbarrowWood_texture,
+        scale = 0.90,
+
+        attachment Bip01_Prop1
+        {
+            offset = -0.3336 0.3481 -0.0656,
+            rotate = 90.0000 6.5202 -90.0000,
+            scale = 0.8500,
+        }
+
+        attachment Bip01_Prop2
+        {
+            offset = -0.3352 0.3476 -0.0651,
+            rotate = 90.0000 6.5202 -90.0000,
+            scale = 0.8500,
+        }
+
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+    }
+	model WheelbarrowMetal
+    {
+        mesh = weapons/2handed/Wheelbarrow_metal|Wheelbarrow_World,
+        texture = weapons/2handed/WheelbarrowMetal_texture,
+        scale = 0.90,
+        invertX = true,
+
+        attachment Bip01_Prop1
+        {
+            offset = -0.3281 0.3481 -0.0508,
+            rotate = 90.0000 6.5202 -90.0000,
+            scale = 0.8500,
+        }
+
+        attachment Bip01_Prop2
+        {
+            offset = -0.3352 0.3476 -0.0547,
+            rotate = 90.0000 6.5202 -90.0000,
+            scale = 0.8500,
+        }
+
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 -0.0000 0.0000,
+        }
+    }
+}

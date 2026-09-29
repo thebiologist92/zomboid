@@ -1,0 +1,7 @@
+name=ZuperCarts Rebuilt [42.20]
+id=ZuperCartsRebuilt
+poster=poster.png
+versionMin=42.20
+modversion=0.2.0
+authors=iBrRus, Troy Mc'Clure; B42 fork by Viruana; local compatibility rebuild
+description=Grocery carts, platform trolleys and hand dollies for Build 42.20. Separate location toggles, spawn presets and custom percentages. Disable B42_TMC_Trolley. Development build; see README.

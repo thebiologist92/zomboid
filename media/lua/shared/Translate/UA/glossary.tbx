@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE martif PUBLIC "ISO 12200:1999A//DTD MARTIF core (DXFcdV04)//EN" "TBXcdv04.dtd">
+<martif type="TBX" xml:lang="en">
+    <martifHeader>
+        <fileDesc>
+            <sourceDesc>
+                <p>Weblate Glossary</p>
+            </sourceDesc>
+        </fileDesc>
+    </martifHeader>
+    <text>
+        <body>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>workstation</term></tig></langSet>
+                <langSet xml:lang="UA"><tig><term/></tig></langSet>
+            </termEntry>
+            <termEntry id="Cáñamo">
+                <langSet xml:lang="en"><tig><term>Burlap</term></tig></langSet>
+                <langSet xml:lang="UA"><tig><term/></tig></langSet>
+            </termEntry>
+            <termEntry id="Сама назва за себе все пояснює. В ніякому разі не перекладаємо як &quot;притулок&quot;. Притулок може бути для тварин, у контексті виживання, будівлі, які слугують нам базою для захисту тощо, це саме прихистки.">
+                <langSet xml:lang="en"><tig><term>Safehouse</term></tig></langSet>
+                <langSet xml:lang="UA"><tig><term>Прихисток</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Виготовити, виготовляти. І в ніякому разі не готувати (це про їжу) чи створювати (тут годиться більше до generate)">
+                <langSet xml:lang="en"><tig><term>Craft</term></tig></langSet>
+                <langSet xml:lang="UA"><tig><term>Виготовити</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Generate - створити. Craft - виготовити. Cook - готувати">
+                <langSet xml:lang="en"><tig><term>Generate</term></tig></langSet>
+                <langSet xml:lang="UA"><tig><term>Створити/Згенерувати</term></tig></langSet>
+            </termEntry>
+        </body>
+    </text>
+</martif>

@@ -1,0 +1,8 @@
+name=Sauced Wheelbarrow Craft
+id=saucedwheelbarrow_Craft
+author=Uora
+poster=poster.png
+versionMin=42.13.1
+require=SaucedCarts,saucedwheelbarrow
+loadModAfter=SaucedCarts,saucedwheelbarrow
+loadModBefore=SaucedCarts_PTBR

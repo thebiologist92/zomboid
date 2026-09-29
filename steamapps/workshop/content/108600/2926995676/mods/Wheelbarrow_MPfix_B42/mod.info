@@ -1,0 +1,5 @@
+name=Wheelbarrow MP Fix
+id=WheelbarrowMPFix_reifel
+description=(credits NGRP.ES - Aleelpalmero) Arregla la carretilla de "Wheelbarrow from Hydrocraft v2" en multijugador: al empujarla ya no desaparece, se puede soltar y guardar, y no se cuelgan las transferencias. Necesita el mod de la carretilla activo.
+poster=poster.png
+versionMin=42.0.0

@@ -1,0 +1,945 @@
+-- ============================================================================
+-- SaucedCarts/Core.lua
+-- ============================================================================
+-- PURPOSE: Core initialization and shared utilities for SaucedCarts.
+--          Loads all modules and sets up the mod namespace.
+--          Defines schema versioning for forward compatibility.
+--
+-- CONTEXT: SHARED (client + server)
+--          This is the main entry point for the mod.
+--
+-- LOAD ORDER:
+--   1. Core.lua (this file) - sets up namespace, schema version
+--   2. CartData.lua - cart type definitions
+--   3. Migration.lua - schema versioning, orphan detection
+--   4. TimedActions/*.lua - pickup/drop actions
+--   5. ContextMenu.lua (client) OR Distributions.lua (server)
+--   6. OrphanRecovery.lua (client) - orphan cart UI
+-- ============================================================================
+
+-- Initialize namespace (preserve any existing table from external mods that loaded first)
+---@class SaucedCartsModule
+---@field VERSION string Mod version
+---@field MOD_ID string Mod identifier
+---@field API_VERSION number Registration API version (increment on breaking changes)
+---@field SCHEMA_VERSION number ModData schema version for migration
+---@field TYPE_ALIASES table<string, string> Old type -> New type mappings for renamed carts
+---@field CartTypes table<string, CartTypeData> Cart type definitions (from CartData.lua)
+---@field Migration SaucedCartsMigration Migration utilities (from Migration.lua)
+---@field OrphanRecovery SaucedCartsOrphanRecovery Orphan recovery UI (from OrphanRecovery.lua)
+---@field _pendingRegistrations table Queue for registrations from mods that load before SaucedCarts
+---@field _registryFrozen boolean Whether the cart registry is frozen (after OnGameStart)
+---@field _orphanedCarts table<number, boolean> Cache of orphan cart IDs for current session
+SaucedCarts = SaucedCarts or {}
+
+-- Version info
+SaucedCarts.VERSION = "2.1.20"
+SaucedCarts.MOD_ID = "SaucedCarts"
+SaucedCarts.API_VERSION = 1  -- Increment on breaking API changes (field renames, removed fields, signature changes)
+
+-- Schema version for ModData migration (increment when ModData structure changes)
+-- Version 1: Initial schema with schemaVersion tracking
+-- Version 2: Added attachment system fields (flashlight upgrade)
+-- Version 3: Added rawCapacity field for CapacityOverride (SaucedCarts_rawCapacity)
+SaucedCarts.SCHEMA_VERSION = 3
+
+-- Type aliases for cart migrations (old type -> new type)
+-- Used when cart types are renamed or moved between modules
+-- Example: ["OldMod.OldCart"] = "NewMod.NewCart"
+SaucedCarts.TYPE_ALIASES = {
+    -- Populate this when renaming cart types in future versions
+}
+
+-- =============================================================================
+-- TUNING CONFIGURATION
+-- =============================================================================
+-- Central configuration for tunable constants.
+-- Changing these values affects mod behavior globally.
+
+SaucedCarts.Config = {
+    -- Durability (shared)
+    TILES_PER_DAMAGE = 110,  -- tiles of movement before 1 condition damage
+    MAX_DISTANCE_PER_FRAME = 5.0,  -- tiles; rejects teleport/chunk-load spikes
+
+    -- Visual fill states (shared)
+    FILL_PARTIAL_THRESHOLD = 0.33,  -- below this = empty model
+    FILL_FULL_THRESHOLD = 0.66,     -- above this = full model
+
+    -- Battery (shared) - SINGLE SOURCE OF TRUTH
+    BATTERY_DRAIN_PER_SECOND = 0.00014,  -- ~2 hours of use
+    BATTERY_CHECK_INTERVAL = 60,          -- ticks (~1 second)
+
+    -- Client tick intervals (frames at 60fps)
+    SELF_CORRECTION_INTERVAL = 180,    -- ~3 seconds (safety net, event-driven handles most cases)
+    UPGRADE_RECOVERY_INTERVAL = 30,    -- ~0.5 second
+    DISPLAY_UPDATE_INTERVAL = 30,      -- ~0.5 second
+
+    -- World spawning (server)
+    SPAWN_TICK_INTERVAL = 30,          -- ticks (~0.5 second)
+    MAX_SPAWNS_PER_TICK = 3,           -- spawns per processing tick
+    MAX_SPAWN_QUEUE_SIZE = 500,        -- maximum queued rooms
+
+    -- Distance sync (MP client -> server)
+    DISTANCE_SYNC_THRESHOLD = 10,     -- tiles before syncing to server
+    DISTANCE_SYNC_MAX = 10000,        -- max accepted value (anti-cheat clamp)
+}
+
+-- Pending registration queue (external mods can push here if they load before SaucedCarts)
+-- Preserve any existing queue from mods that already added to it
+SaucedCarts._pendingRegistrations = SaucedCarts._pendingRegistrations or {}
+SaucedCarts._registryFrozen = false
+
+-- ============================================================================
+-- LOGGING
+-- ============================================================================
+
+-- Cache builtins (may be cleared on dedicated servers)
+local type = type
+local tostring = tostring
+
+--- Check if debug logging is enabled
+--- Requires BOTH PZ debug mode AND sandbox EnableDebugLogs setting
+--- No caching - allows mid-game setting changes (only runs in debug mode anyway)
+---@return boolean True if debug logging should occur
+local function isDebugEnabled()
+    -- Fast path: not in debug mode at all
+    if not getDebug() then return false end
+
+    -- Check sandbox setting (no cache - allows mid-game changes)
+    local sandbox = SandboxVars.SaucedCarts
+    -- Default to true for backwards compatibility (if sandbox not loaded yet)
+    if not sandbox then return true end
+
+    return sandbox.EnableDebugLogs ~= false
+end
+
+-- Export for external fast-path checks (e.g., WorldSpawning bulk operations)
+SaucedCarts.isDebugEnabled = isDebugEnabled
+
+--- Log a message with mod prefix. Accepts a string OR a zero-arg function
+--- (for lazy evaluation of expensive string builds) — matches .debug().
+---@param messageOrFn string|function|any The message, or function returning message
+function SaucedCarts.log(messageOrFn)
+    local message
+    if type(messageOrFn) == "function" then
+        message = messageOrFn()
+    else
+        message = messageOrFn
+    end
+    print("[SaucedCarts] " .. tostring(message))
+end
+
+--- Log an error with mod prefix
+---@param message string|any The error message to log
+function SaucedCarts.error(message)
+    print("[SaucedCarts:ERROR] " .. tostring(message))
+end
+
+--- Log a debug message with lazy evaluation support
+--- For hot paths, pass a function to defer string concatenation:
+---   SaucedCarts.debug(function() return "Value: " .. expensive end)
+--- For simple messages, string is still supported (legacy):
+---   SaucedCarts.debug("Simple message")
+---@param messageOrFn string|function|any The message, or function returning message
+function SaucedCarts.debug(messageOrFn)
+    if not isDebugEnabled() then return end
+
+    local message
+    if type(messageOrFn) == "function" then
+        -- Lazy evaluation: only call function when debug is enabled
+        message = messageOrFn()
+    else
+        message = messageOrFn
+    end
+
+    print("[SaucedCarts:DEBUG] " .. tostring(message))
+end
+
+-- ============================================================================
+-- EVENT SYSTEM
+-- ============================================================================
+-- Provides lifecycle events for addon extensibility.
+-- Addons can subscribe to events to react to cart state changes.
+--
+-- Usage:
+--   SaucedCarts.Events.onCartEquip:Add(function(player, cart, source) ... end)
+--   SaucedCarts.Events.onCartEquip:Remove(handler)
+
+---@class SaucedCartsEvent
+---@field name string Event name for debugging
+---@field listeners function[] Registered listeners
+---@field Add function(self, listener) Subscribe to event
+---@field Remove function(self, listener) Unsubscribe from event
+
+--- Create a new event object
+---@param name string Event name for debugging
+---@return SaucedCartsEvent
+local function createEvent(name)
+    local event = {
+        name = name,
+        listeners = {},
+    }
+
+    -- PZ-style :Add() method
+    event.Add = function(self, listener)
+        if type(listener) ~= "function" then
+            SaucedCarts.error("Event.Add: listener must be a function")
+            return
+        end
+        table.insert(self.listeners, listener)
+        SaucedCarts.debug(function() return "Events: added listener to " .. self.name end)
+    end
+
+    -- PZ-style :Remove() method
+    event.Remove = function(self, listener)
+        for i, l in ipairs(self.listeners) do
+            if l == listener then
+                table.remove(self.listeners, i)
+                SaucedCarts.debug(function() return "Events: removed listener from " .. self.name end)
+                return true
+            end
+        end
+        return false
+    end
+
+    return event
+end
+
+--- Fire an event (internal use only)
+--- All listeners are called with pcall for error isolation
+---@param event SaucedCartsEvent The event to fire
+---@vararg any Arguments to pass to listeners
+local function fireEvent(event, ...)
+    if #event.listeners == 0 then return end  -- Fast path: no listeners
+
+    for _, listener in ipairs(event.listeners) do
+        local success, err = pcall(listener, ...)
+        if not success then
+            SaucedCarts.error("Event " .. event.name .. " listener error: " .. tostring(err))
+        end
+    end
+end
+
+-- Public event table for addon subscription
+SaucedCarts.Events = {
+    -- Lifecycle events (fire on both client and server where applicable)
+    onCartEquip = createEvent("onCartEquip"),           -- (player, cart, source: "ground"|"inventory"|"vehicle")
+    onCartDrop = createEvent("onCartDrop"),             -- (player, cart, square)
+    onCartBroke = createEvent("onCartBroke"),           -- (player, cart, square)
+    onCartRepair = createEvent("onCartRepair"),         -- (player, cart, repairAmount, newCondition)
+
+    -- Container events (client-side)
+    onCartContentsChanged = createEvent("onCartContentsChanged"),  -- (cart, player)
+    onCartVisualUpdate = createEvent("onCartVisualUpdate"),        -- (cart, fillState, modelName)
+
+    -- Movement events (client-side, throttled to ~1 tile)
+    onCartMove = createEvent("onCartMove"),             -- (player, cart, distance)
+
+    -- Upgrade events (fire on both client and server)
+    onFlashlightInstalled = createEvent("onFlashlightInstalled"), -- (player, cart, flashlightType)
+    onFlashlightRemoved = createEvent("onFlashlightRemoved"),     -- (player, cart, flashlightType)
+    onFlashlightToggled = createEvent("onFlashlightToggled"),     -- (player, cart, isActive)
+    onBatteryInserted = createEvent("onBatteryInserted"),         -- (player, cart, chargeAmount)
+    onBatteryRemoved = createEvent("onBatteryRemoved"),           -- (player, cart, chargeAmount)
+
+    -- Registration events (fire during mod loading)
+    onCartRegistered = createEvent("onCartRegistered"), -- (fullType, cartData)
+    onRegistryFrozen = createEvent("onRegistryFrozen"), -- (cartCount)
+
+    -- UI/Menu events (client-side, for addon menu extensions)
+    onBuildCartSubmenu = createEvent("onBuildCartSubmenu"), -- (submenu, playerObj, cart, isWorldCart)
+}
+
+-- Internal fire function (not exposed to addons - they only subscribe)
+SaucedCarts._fireEvent = fireEvent
+
+-- ============================================================================
+-- CONTAINER TYPE CONSTANTS
+-- ============================================================================
+-- Container types from vehicle scripts. Used for vehicle container detection.
+-- Source: Java source (ItemContainer.java) + vehicle script files
+
+SaucedCarts.ContainerTypes = {
+    FLOOR = "floor",           -- Ground containers (ItemContainer.java:191)
+    TRUNK = "trunk",           -- Vehicle trunk
+    GLOVEBOX = "glovebox",     -- Glove compartment
+    SEATREAR = "seatrear",     -- Rear seat storage
+    TRUCKBED = "truckbed",     -- Pickup truck bed
+    TRAILERTRUNK = "trailertrunk", -- Trailer storage
+}
+
+--- Check if container type matches any vehicle container pattern
+--- Matches substrings to handle modded container types (e.g., "truckbedlarge")
+---@param containerType string|nil The container type to check
+---@return boolean True if this is a vehicle container type
+function SaucedCarts.isVehicleContainerType(containerType)
+    if not containerType then return false end
+    local typeLower = string.lower(containerType)
+    for _, pattern in pairs(SaucedCarts.ContainerTypes) do
+        -- Skip FLOOR - ground is not a vehicle container
+        if pattern ~= "floor" and string.find(typeLower, pattern) then
+            return true
+        end
+    end
+    return false
+end
+
+-- ============================================================================
+-- CART VALIDATION
+-- ============================================================================
+
+--- Check if an item is a SaucedCarts cart
+---@param item InventoryItem|nil The item to check
+---@return boolean True if item is a SaucedCarts cart
+function SaucedCarts.isCart(item)
+    if not item then return false end
+    -- Must be a Java object (userdata) - reject strings, tables, etc.
+    -- This catches category headers, malformed item stacks, and mod-added UI elements
+    if type(item) ~= "userdata" then return false end
+    -- Ensure it's specifically an InventoryItem (not other Java objects)
+    if not instanceof(item, "InventoryItem") then return false end
+    -- Check if item belongs to SaucedCarts module
+    local fullType = item:getFullType()
+    return fullType and SaucedCarts.CartTypes[fullType] ~= nil
+end
+
+--- Check if an item is a valid cart that can be equipped/used
+---@param item InventoryItem|nil The item to check
+---@return boolean True if item is a valid usable cart
+function SaucedCarts.isValidCart(item)
+    if not SaucedCarts.isCart(item) then return false end
+    return instanceof(item, "InventoryContainer")
+end
+
+--- Safely check if an item is a cart (wrapped in pcall)
+--- Returns false on any error - fail-safe for hooks that should allow transfer on error.
+--- Use this in hooks where breaking vanilla functionality is unacceptable.
+---@param item any The item to check (can be nil or any type)
+---@return boolean True if item is definitely a SaucedCarts cart, false otherwise (including on error)
+function SaucedCarts.safeIsCart(item)
+    if not item then return false end
+
+    local success, result = pcall(function()
+        return SaucedCarts.isCart(item)
+    end)
+
+    if not success then
+        -- On error, return false (fail-safe)
+        SaucedCarts.debug(function() return "safeIsCart error (returning false): " .. tostring(result) end)
+        return false
+    end
+
+    return result == true
+end
+
+--- Check if a cart type is registered
+---@param fullType string Full item type (e.g., "MyMod.MyCart")
+---@return boolean True if the cart type is registered
+function SaucedCarts.isRegistered(fullType)
+    return SaucedCarts.CartTypes and SaucedCarts.CartTypes[fullType] ~= nil
+end
+
+--- Get the count of registered cart types
+---@return number The number of registered cart types
+function SaucedCarts.getCartTypeCount()
+    if not SaucedCarts.CartTypes then return 0 end
+    local count = 0
+    for _ in pairs(SaucedCarts.CartTypes) do
+        count = count + 1
+    end
+    return count
+end
+
+-- ============================================================================
+-- CART INFO UTILITIES
+-- ============================================================================
+
+--- Get the cart's user-facing display name.
+--- Returns the CUSTOM name if the player has renamed the item via vanilla's
+--- rename UI (stored on item:getName()); falls back to the registered
+--- CartType name; falls back to "Cart". Prefer this over reading
+--- cartData.name directly so the context menu and notifications show
+--- "Cartman" after a rename instead of the generic "Shopping Cart".
+---@param cart InventoryItem|nil
+---@return string
+function SaucedCarts.getCartDisplayName(cart)
+    -- Vanilla `setName` + `setCustomName(true)` (via the standard
+    -- ISInventoryPaneContextMenu "Rename Bag" flow our InventoryContainer
+    -- carts pick up automatically) sets the item's display name. vanilla
+    -- syncItemFields handles MP propagation when the cart is grounded.
+    if cart and cart.getName then
+        local ok, n = pcall(function() return cart:getName() end)
+        if ok and n and n ~= "" then return n end
+    end
+    local cartData = cart and SaucedCarts.getCartData and SaucedCarts.getCartData(cart)
+    if cartData and cartData.name then return cartData.name end
+    return "Cart"
+end
+
+--- Get the cart's current fill percentage (0-100)
+--- When player is provided, accounts for Organized/Disorganized trait bonuses
+---@param cart InventoryItem The cart item
+---@param player IsoPlayer|nil Optional player for trait-aware capacity
+---@return number Fill percentage (0-100)
+function SaucedCarts.getFillPercent(cart, player)
+    if not SaucedCarts.isValidCart(cart) then return 0 end
+
+    ---@type ItemContainer
+    local container = cart:getItemContainer()
+    if not container then return 0 end
+
+    local used = container:getCapacityWeight()
+    local max
+    if player then
+        max = container:getEffectiveCapacity(player)
+    else
+        max = container:getCapacity()
+    end
+    if max <= 0 then return 0 end
+
+    return math.floor((used / max) * 100)
+end
+
+--- Get the number of items in the cart
+---@param cart InventoryItem The cart item
+---@return number Number of items
+function SaucedCarts.getItemCount(cart)
+    if not SaucedCarts.isValidCart(cart) then return 0 end
+
+    ---@type ItemContainer
+    local container = cart:getItemContainer()
+    if not container then return 0 end
+
+    return container:getItems():size()
+end
+
+--- Get the cart's condition as a percentage (0-100)
+---@param cart InventoryItem The cart item
+---@return number Condition percentage (0-100)
+function SaucedCarts.getConditionPercent(cart)
+    if not cart then return 0 end
+
+    local condition = cart:getCondition()
+    local maxCondition = cart:getConditionMax()
+    if maxCondition <= 0 then return 100 end
+
+    return math.floor((condition / maxCondition) * 100)
+end
+
+-- ============================================================================
+-- PLAYER UTILITIES
+-- ============================================================================
+
+--- Check if a player is currently holding a cart
+---@param player IsoPlayer The player to check
+---@return boolean True if player is holding a cart
+function SaucedCarts.isHoldingCart(player)
+    if not player then return false end
+    local primary = player:getPrimaryHandItem()
+    return SaucedCarts.isCart(primary)
+end
+
+--- Get the cart a player is holding, or nil
+---@param player IsoPlayer The player to check
+---@return InventoryItem|nil The held cart, or nil if not holding one
+function SaucedCarts.getHeldCart(player)
+    if not player then return nil end
+    local primary = player:getPrimaryHandItem()
+    if SaucedCarts.isCart(primary) then
+        return primary
+    end
+    return nil
+end
+
+-- ============================================================================
+-- SANDBOX MULTIPLIERS
+-- ============================================================================
+
+--- Stamp the current sandbox weight-reduction value onto a cart.
+---
+--- CRITICAL: this MUST be called on the cart item itself (the outer
+--- InventoryContainer), NOT on cart:getItemContainer() (the inner
+--- ItemContainer). Vanilla reads the InventoryContainer's OWN weightReduction
+--- field for BOTH the tooltip display (InventoryContainer.DoTooltip ->
+--- getWeightReduction, InventoryContainer.java:207-210) and the actual
+--- encumbrance reduction (InventoryContainer.getEquippedWeight, line 286-287).
+--- The inner ItemContainer's weightReduction field is never read by the engine,
+--- so setting it (the pre-2.1.8 behavior) had no observable effect — the cart
+--- stayed pinned to the script default (WeightReduction=95) regardless of the
+--- sandbox setting. InventoryContainer.setWeightReduction propagates to both
+--- fields anyway (InventoryContainer.java:139-143).
+---
+--- Reads the sandbox value on EVERY call so mid-game changes take effect on the
+--- next equip/pickup/relog. Unlike capacity (interceptable via __classmetatables),
+--- weight reduction is a plain Java field read by Java-internal callers, so we
+--- can't override the read — we re-stamp the field instead.
+---@param cart InventoryItem The cart item (outer InventoryContainer)
+---@return number The weight-reduction value applied
+local function applyWeightReduction(cart)
+    local weightRed = 95
+    if SandboxVars.SaucedCarts then
+        weightRed = SandboxVars.SaucedCarts.WeightReduction
+            or SandboxVars.SaucedCarts.WeightReductionMultiplier or 95
+    end
+    cart:setWeightReduction(weightRed)
+    SaucedCarts.debug(function() return "WeightReduction stamped on wrapper: " .. weightRed end)
+    return weightRed
+end
+
+--- Apply sandbox multipliers to a cart when first encountered
+--- Modifies capacity and durability based on sandbox settings
+--- Also initializes schema version if not set
+---@param cart InventoryItem The cart item to apply multipliers to
+---@return boolean True if multipliers were applied, false if already applied or invalid
+function SaucedCarts.applyMultipliers(cart)
+    if not cart then
+        SaucedCarts.error("applyMultipliers: cart is nil")
+        return false
+    end
+
+    local modData = cart:getModData()
+
+    -- Initialize schema version if not set (first touch of this cart)
+    if not modData.SaucedCarts_schemaVersion then
+        modData.SaucedCarts_schemaVersion = SaucedCarts.SCHEMA_VERSION
+    end
+
+    -- Skip the one-shot multipliers if already applied, but ALWAYS re-stamp
+    -- weight reduction: it's a plain Java field (not interceptable like capacity),
+    -- so existing carts must be re-stamped each touch to pick up mid-game sandbox
+    -- changes. Cheap + idempotent.
+    if modData.SaucedCarts_multipliersApplied then
+        applyWeightReduction(cart)
+        -- Re-stamp type-level run speed too: cheap, idempotent, and the only
+        -- way mid-game sandbox edits reach the script (no vanilla event).
+        SaucedCarts.applyCartRunSpeedSettings()
+        -- Ensure raw capacity is in ModData (migration for saves before CapacityOverride)
+        local rawCapKey = SaucedCarts.CapacityOverride and SaucedCarts.CapacityOverride.getRawCapacityKey()
+        if rawCapKey and not modData[rawCapKey] then
+            local cartData = SaucedCarts.getCartData(cart)
+            if cartData then
+                local capMult = SandboxVars.SaucedCarts and SandboxVars.SaucedCarts.CapacityMultiplier or 100
+                modData[rawCapKey] = math.floor(cartData.capacity * capMult / 100)
+            end
+        end
+        return false
+    end
+
+    local cartData = SaucedCarts.getCartData(cart)
+    if not cartData then
+        SaucedCarts.error("applyMultipliers: no cartData for " .. tostring(cart:getFullType()))
+        return false
+    end
+
+    -- Get sandbox multipliers (default to 100%)
+    -- NOTE: SpeedPenaltyMultiplier is NOT handled here — it is a per-TYPE
+    -- script patch, not per-instance state. See applyCartRunSpeedSettings.
+    local capMult = 100
+    local durMult = 100
+    if SandboxVars.SaucedCarts then
+        capMult = SandboxVars.SaucedCarts.CapacityMultiplier or 100
+        durMult = SandboxVars.SaucedCarts.DurabilityMultiplier or 100
+    else
+        SaucedCarts.error("applyMultipliers: SandboxVars.SaucedCarts is nil!")
+    end
+
+    SaucedCarts.debug(function() return "applyMultipliers: capMult=" .. capMult .. "%, durMult=" .. durMult .. "%" end)
+
+    -- Apply capacity multiplier
+    -- Java's setCapacity always stores the value (ItemContainer.java:171), but
+    -- getCapacity() caps at Math.min(capacity, 50). We store the raw value in
+    -- ModData so CapacityOverride.lua can read it back without hitting the cap.
+    local container = cart:getItemContainer()
+    if container then
+        local baseCapacity = cartData.capacity
+        local newCapacity = math.floor(baseCapacity * capMult / 100)
+        container:setCapacity(newCapacity)
+
+        -- Store raw capacity in ModData for CapacityOverride to read
+        -- (Kahlua can't access Java fields directly; getCapacity() caps at 50)
+        local rawCapKey = SaucedCarts.CapacityOverride and SaucedCarts.CapacityOverride.getRawCapacityKey()
+        if rawCapKey then
+            modData[rawCapKey] = newCapacity
+        end
+
+        SaucedCarts.debug(function() return "Capacity: base=" .. baseCapacity .. ", applied=" .. newCapacity end)
+    else
+        SaucedCarts.error("applyMultipliers: container is nil for " .. tostring(cart:getFullType()))
+    end
+
+    -- Apply weight reduction on the OUTER InventoryContainer (see applyWeightReduction).
+    -- Absolute value from sandbox: 100 = items weigh nothing, 95 = 5% of normal, 0 = none.
+    applyWeightReduction(cart)
+
+    -- Apply durability multiplier
+    local baseConditionMax = cartData.conditionMax
+    local newConditionMax = math.floor(baseConditionMax * durMult / 100)
+    cart:setConditionMax(newConditionMax)
+    SaucedCarts.debug(function() return "ConditionMax: base=" .. baseConditionMax .. ", applied=" .. newConditionMax end)
+
+    -- Scale current condition proportionally if it's at max
+    local currentCondition = cart:getCondition()
+    if currentCondition == baseConditionMax or currentCondition > newConditionMax then
+        cart:setCondition(newConditionMax)
+    end
+
+    -- Mark as applied
+    modData.SaucedCarts_multipliersApplied = true
+
+    return true
+end
+
+--- Resolve a safe resting square for a dropped cart.
+---
+--- Stairs squares don't hold dropped world items — PZ settles an item placed on
+--- a staircase onto the floor below, so a cart dropped while standing on stairs
+--- ends up a level down and out of reach. This returns the intended square if
+--- it's safe, otherwise the nearest adjacent walkable solid-floor square at the
+--- same level (the stair landing). Falls back to the original square if no
+--- better neighbour exists (preserves prior behaviour rather than blocking the
+--- drop), so callers can use the result unconditionally.
+---@param square IsoGridSquare|nil intended drop square (usually the player's)
+---@return IsoGridSquare|nil resolved square (nil only if `square` was nil)
+function SaucedCarts.resolveCartDropSquare(square)
+    if not square then return nil end
+
+    -- Would an item dropped here fall to the floor below?
+    local function settles(sq)
+        if sq.HasStairs and sq:HasStairs() then return true end
+        -- Indoors with no solid floor = a hole/ledge over a lower level.
+        if sq.getBuilding and sq:getBuilding() ~= nil
+            and sq.isSolidFloor and not sq:isSolidFloor() then
+            return true
+        end
+        return false
+    end
+
+    if not settles(square) then return square end
+
+    -- Search neighbours (cardinals first, then diagonals) for a solid landing
+    -- at the same level. Don't gate on isBlockedTo — stair-block rules make that
+    -- unreliable from a stair tile, and the landing is physically adjacent.
+    local z = square:getZ()
+    local dirs = {
+        IsoDirections.N, IsoDirections.E, IsoDirections.S, IsoDirections.W,
+        IsoDirections.NE, IsoDirections.SE, IsoDirections.SW, IsoDirections.NW,
+    }
+    for _, dir in ipairs(dirs) do
+        local adj = square:getAdjacentSquare(dir)
+        if adj and adj:getZ() == z
+            and not (adj.HasStairs and adj:HasStairs())
+            and adj.isSolidFloor and adj:isSolidFloor()
+            and adj:isFree(false) then
+            return adj
+        end
+    end
+
+    -- No safe landing found — fall back to the original (no regression).
+    return square
+end
+
+--- Exempt a just-dropped world item from the sandbox world-item cleanup.
+---
+--- Servers that set HoursForWorldItemRemoval (especially with
+--- ItemRemovalListBlacklistToggle = true, i.e. "remove everything NOT listed")
+--- delete matching ground items. The sweep is not a timer — it's a filter
+--- inside IsoGridSquare.load (IsoGridSquare.java:3297-3314) that discards
+--- matching IsoWorldInventoryObjects as the chunk is deserialized. The whole
+--- condition is gated on `&& !worldItem.isIgnoreRemoveSandbox()`, and the flag
+--- is serialized (IsoWorldInventoryObject.java:487 write / :430 read), so
+--- setting it once at drop time survives save/load.
+---
+--- Vanilla sets this on EVERY player-initiated drop — ISDropWorldItemAction.lua:85,
+--- ISDropVehicleItemAction.lua:51, ItemSpawner.java:37 — so player-handled items
+--- are exempt by design and the option only sweeps spawned clutter. Every path
+--- of ours that puts a cart (or a cart's cargo) on the ground must do the same,
+--- otherwise carts are the only player-dropped object in the game that vanilla
+--- cleanup eats. Deliberately NOT applied to WorldSpawning's loot spawns: fresh
+--- unhandled loot being sweepable IS the vanilla contract.
+---
+---@param dropped InventoryItem|nil Return value of IsoGridSquare:AddWorldInventoryItem
+---@return boolean marked True if the flag was set
+function SaucedCarts.markDropPersistent(dropped)
+    if not dropped then return false end
+    local ok, marked = pcall(function()
+        if not dropped.getWorldItem then return false end
+        local worldItem = dropped:getWorldItem()
+        if not worldItem or not worldItem.setIgnoreRemoveSandbox then return false end
+        worldItem:setIgnoreRemoveSandbox(true)
+        return true
+    end)
+    return ok and marked or false
+end
+
+-- ============================================================================
+-- CART-PUSH POSE ANIMATION VARIABLES
+-- ============================================================================
+-- The two-handed cart-pushing pose is driven entirely by three animation
+-- variables. They are NOT sticky: anything that drives a hand animation
+-- overwrites them and restores ITS defaults, not ours —
+--   * vanilla timed actions: eating, drinking, reloading, bandaging, smoking,
+--     transferring, etc. (local player)
+--   * the engine's network sync (IsoPlayer.java) for remote players
+-- So every holder must keep re-asserting them. These helpers are the single
+-- source of truth for the variable names + apply/clear/check, so callers
+-- (equip/unequip transitions, the per-frame self-heal in CartStateHandler, the
+-- remote-player maintenance loop, late-joiner sync, instant-drop) never
+-- hardcode the literals or drift apart. They take a character so they work for
+-- the local player AND remote avatars.
+
+SaucedCarts.CART_POSE_VARS = {
+    Weapon        = "cart",
+    RightHandMask = "holdingcartright",
+    LeftHandMask  = "holdingcartleft",
+}
+
+--- Apply the cart-push pose animation variables.
+---@param character IsoGameCharacter
+function SaucedCarts.applyCartPose(character)
+    if not character then return end
+    character:setVariable("Weapon", "cart")
+    character:setVariable("RightHandMask", "holdingcartright")
+    character:setVariable("LeftHandMask", "holdingcartleft")
+end
+
+--- Clear the cart-push pose animation variables.
+---@param character IsoGameCharacter
+function SaucedCarts.clearCartPose(character)
+    if not character then return end
+    character:setVariable("Weapon", "")
+    character:setVariable("RightHandMask", "")
+    character:setVariable("LeftHandMask", "")
+end
+
+--- Have the cart-push pose variables drifted from their expected values?
+--- Cheap (string compares) — lets the per-frame self-heal re-apply only when
+--- something actually clobbered them.
+---@param character IsoGameCharacter
+---@return boolean
+function SaucedCarts.cartPoseDrifted(character)
+    if not character then return false end
+    return character:getVariableString("Weapon") ~= "cart"
+        or character:getVariableString("RightHandMask") ~= "holdingcartright"
+        or character:getVariableString("LeftHandMask") ~= "holdingcartleft"
+end
+
+--- Restore the full cart-push pose: animation variables + equipped-model
+--- binding. The variables alone fix the body animation set, but actions that
+--- play their own animation while a container stays equipped (smoking,
+--- barricading, …) leave the cart MODEL bound where the action put it — in the
+--- primary hand at the player's side — and only resetEquippedHandsModels
+--- rebinds it (the same pairing RemotePlayer/LateJoiner/CartVisuals use).
+---@param character IsoGameCharacter
+function SaucedCarts.restoreCartPose(character)
+    if not character then return end
+    SaucedCarts.applyCartPose(character)
+    if character.resetEquippedHandsModels then
+        character:resetEquippedHandsModels()
+    end
+end
+
+--- Per-frame cart-pose maintenance for a cart holder. Call once per frame with
+--- whether the character had a timed action running LAST frame (caller-stored)
+--- and whether one is running NOW; returns the value to store for next frame
+--- plus whether a restore fired.
+---
+--- Two rules, in priority order:
+---   1. While a timed action runs, do NOTHING — the action owns the animation
+---      (smoking, barricading, transferring…), and fighting its variables or
+---      hand-model overrides mid-run breaks the action's own visuals.
+---   2. On the frame the action finishes (wasInAction → not inAction edge),
+---      restore UNCONDITIONALLY. The edge matters: the variables may read
+---      correct at that point (healed earlier, or never clobbered — some
+---      actions only override hand models / the action state, not our vars),
+---      but the model binding is stale either way. A drift check here would
+---      skip the rebind — that exact false-negative shipped once.
+--- Outside actions, heal variable drift from any other clobber source (engine
+--- sync etc.) as it appears.
+---@param character IsoGameCharacter
+---@param wasInAction boolean|nil had a timed action last frame (caller-stored)
+---@param inAction boolean has a timed action this frame
+---@return boolean inAction store as wasInAction for next frame
+---@return boolean restored whether a pose restore fired this frame
+function SaucedCarts.maintainCartPose(character, wasInAction, inAction)
+    if not character then return false, false end
+    if inAction then return true, false end
+
+    if wasInAction or SaucedCarts.cartPoseDrifted(character) then
+        SaucedCarts.restoreCartPose(character)
+        return false, true
+    end
+    return false, false
+end
+
+-- ============================================================================
+-- INITIALIZATION
+-- ============================================================================
+
+--- Apply multipliers to all carts in a player's inventory
+--- Called on game start to handle carts from saved games
+---@param player IsoPlayer The player to check
+---@return number Number of carts that had multipliers applied
+local function applyMultipliersToPlayerCarts(player)
+    if not player then return 0 end
+
+    local inventory = player:getInventory()
+    if not inventory then return 0 end
+
+    local count = 0
+    local items = inventory:getItems()
+    for i = 0, items:size() - 1 do
+        local item = items:get(i)
+        if SaucedCarts.isCart(item) then
+            if SaucedCarts.applyMultipliers(item) then
+                count = count + 1
+            end
+        end
+    end
+
+    return count
+end
+
+-- ============================================================================
+-- CART RUN SPEED (SpeedPenaltyMultiplier sandbox option)
+-- ============================================================================
+-- The push/run/ride speed penalty lives in the item SCRIPT's RunSpeedModifier:
+-- IsoGameCharacter.calcRunSpeedModByBag reads bag.getScriptItem()
+-- .runSpeedModifier (Java-internal, live read every speed calc), NOT the item
+-- instance or ModData. So the sandbox option must patch the shared script
+-- object per cart TYPE via DoParam — instance-level state can never work
+-- (pre-v2.1.20 versions stamped ModData that nothing read; the option was a
+-- silent no-op).
+--
+-- Why speed matters beyond pacing: vanilla cancels sprint whenever effective
+-- run speed drops below 0.4 unless the player is in ghost mode
+-- (IsoPlayer.java:2733-2741). The sprint-while-pushing state is what plays the
+-- Bob_Cart_Sprint "riding" animation, so a harsh RunSpeedModifier makes the
+-- ride unreachable in normal play. Base 0.9 leaves a healthy margin; the
+-- sandbox option lets servers dial the penalty back up.
+
+--- Pure formula: scale a cart's base run-speed modifier by the sandbox
+--- penalty multiplier. 100 = base penalty, 0 = no penalty, 500 = 5x penalty.
+--- Clamped to [0.1, 2.0] (FIELD_RANGES bounds for runSpeedModifier).
+---@param baseMod number The cart type's base runSpeedModifier (e.g. 0.9)
+---@param penaltyMult number Sandbox SpeedPenaltyMultiplier (0-500)
+---@return number The effective runSpeedModifier to stamp on the script
+function SaucedCarts.computeRunSpeedModifier(baseMod, penaltyMult)
+    local penalty = (1 - baseMod) * (penaltyMult or 100) / 100
+    local newMod = 1 - penalty
+    if newMod < 0.1 then newMod = 0.1 end
+    if newMod > 2.0 then newMod = 2.0 end
+    -- Round to 4 decimals: kills float dust (0.50000000000000004) and makes
+    -- the returned value exactly what the %.4f DoParam stamp writes.
+    return math.floor(newMod * 10000 + 0.5) / 10000
+end
+
+--- Stamp the sandbox-scaled RunSpeedModifier onto every opted-in cart type's
+--- item script. Idempotent; safe to call on every boot and sandbox change.
+--- Only types whose registry entry EXPLICITLY declared runSpeedModifier are
+--- touched (runSpeedExplicit — see CartData.registerCart): the script field
+--- has no Lua getter, so for defaulted registrations we could not know the
+--- addon's real base and stamping would silently change their speed.
+---@return number patched How many cart type scripts were stamped
+function SaucedCarts.applyCartRunSpeedSettings()
+    local penaltyMult = 100
+    if SandboxVars.SaucedCarts and SandboxVars.SaucedCarts.SpeedPenaltyMultiplier then
+        penaltyMult = SandboxVars.SaucedCarts.SpeedPenaltyMultiplier
+    end
+
+    local sm = getScriptManager and getScriptManager() or nil
+    if not sm then
+        -- Offline test kit / exotic contexts: nothing to stamp, not an error.
+        SaucedCarts.debug("applyCartRunSpeedSettings: no ScriptManager, skipping")
+        return 0
+    end
+
+    local patched = 0
+    for fullType, data in pairs(SaucedCarts.CartTypes or {}) do
+        if data.runSpeedExplicit and type(data.runSpeedModifier) == "number" then
+            local newMod = SaucedCarts.computeRunSpeedModifier(data.runSpeedModifier, penaltyMult)
+            local script = sm:getItem(fullType)
+            if script then
+                script:DoParam("RunSpeedModifier = " .. string.format("%.4f", newMod))
+                patched = patched + 1
+                SaucedCarts.debug(function() return string.format(
+                    "RunSpeedModifier: %s base=%.2f penalty=%d%% -> %.4f",
+                    fullType, data.runSpeedModifier, penaltyMult, newMod) end)
+            else
+                SaucedCarts.log("applyCartRunSpeedSettings: no script item for " .. tostring(fullType))
+            end
+        end
+    end
+    return patched
+end
+
+local function onGameStart()
+    SaucedCarts.debug("Initializing SaucedCarts v" .. SaucedCarts.VERSION)
+
+    -- Freeze the cart registry - no more registrations allowed after game start
+    SaucedCarts._registryFrozen = true
+    SaucedCarts.debug(function() return "Cart registry frozen - " .. SaucedCarts.getCartTypeCount() .. " cart type(s) registered" end)
+
+    -- Fire registry frozen event
+    if SaucedCarts._fireEvent then
+        SaucedCarts._fireEvent(SaucedCarts.Events.onRegistryFrozen, SaucedCarts.getCartTypeCount())
+    end
+
+    -- Stamp sandbox-scaled run speed onto cart scripts (SandboxVars are
+    -- loaded by now; the registry is complete and frozen)
+    SaucedCarts.applyCartRunSpeedSettings()
+
+    -- Log sandbox settings (debug only)
+    if SandboxVars.SaucedCarts then
+        SaucedCarts.debug(function() return "Sandbox: Enabled=" .. tostring(SandboxVars.SaucedCarts.EnableMod) ..
+            ", SpawnRate=" .. tostring(SandboxVars.SaucedCarts.SpawnRate) .. "%" ..
+            ", Capacity=" .. tostring(SandboxVars.SaucedCarts.CapacityMultiplier) .. "%" ..
+            ", Durability=" .. tostring(SandboxVars.SaucedCarts.DurabilityMultiplier) .. "%" end)
+    end
+
+    -- Apply multipliers to any carts already in player inventory (from saved games)
+    local player = getPlayer()
+    if player then
+        local applied = applyMultipliersToPlayerCarts(player)
+        if applied > 0 then
+            SaucedCarts.debug(function() return "Applied multipliers to " .. applied .. " existing cart(s)" end)
+        end
+
+        -- Run cart migrations (schema versioning, orphan detection, condition validation)
+        require("SaucedCarts/Migration")
+        if SaucedCarts.Migration and SaucedCarts.Migration.migratePlayerInventory then
+            local migrated, orphans = SaucedCarts.Migration.migratePlayerInventory(player)
+            if migrated > 0 then
+                SaucedCarts.debug(function() return "Migrated " .. migrated .. " cart(s), found " .. #orphans .. " orphan(s)" end)
+            end
+        end
+    end
+end
+
+-- Register initialization event
+Events.OnGameStart.Add(onGameStart)
+
+-- Dedicated servers never fire OnGameStart — stamp cart run speed from the
+-- server-side boot hook too (harmless double-apply in SP/hosted: idempotent).
+if Events.OnServerStarted then
+    Events.OnServerStarted.Add(function()
+        SaucedCarts.applyCartRunSpeedSettings()
+    end)
+end
+
+-- NOTE: there is NO vanilla "sandbox options changed" event in B42 (verified
+-- 42.20 decompile: SandboxOptions.toLua triggers nothing). Mid-game sandbox
+-- edits are picked up by the re-stamp in applyMultipliers on the next cart
+-- touch (equip/pickup/relog) — same convention as weight reduction.
+
+-- v2.1.14: Core no longer requires its submodules. PZ's directory scan
+-- loads every file under media/lua/{shared,client,server}/ regardless, and
+-- every submodule now declares its own dependencies at the top (including
+-- "SaucedCarts/Core"). The old tail-requires here created 8 harmless-but-
+-- scary "recursive require()" warnings in every context (Core -> module ->
+-- Core), which generated user bug reports on heavily modded servers.
+-- Inter-module order is enforced where it matters by each module's own
+-- requires (e.g. GrabCorpseInterceptor requires CorpseStorage).
+
+SaucedCarts.debug("Core module loaded (v" .. SaucedCarts.VERSION .. ")")
+
+return SaucedCarts

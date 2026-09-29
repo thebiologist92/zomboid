@@ -1,0 +1,6 @@
+name=SaucedWheelbarrow
+id=saucedwheelbarrow
+description=Adds Wheelbarrow types using the SaucedCarts framework.
+poster=poster.png
+modversion=1.0.0
+versionmin=42.13.1

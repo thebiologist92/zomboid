@@ -1,0 +1,50 @@
+module Base {
+    model ZCR_DollyHeldV2
+    {
+        mesh = weapons/2handed/zcr_dolly_v2.glb,
+        texture = weapons/2handed/zcr_dolly,
+        scale = 0.26,
+        invertX = true,
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 90.0000 0.0000,
+        }
+    }
+    model ZCR_DollyWorldV2
+    {
+        mesh = weapons/2handed/zcr_dolly_v2.glb,
+        texture = weapons/2handed/zcr_dolly,
+        scale = 0.26,
+        invertX = true,
+        attachment world
+        {
+            offset = -0.5700 -0.0300 0.0000,
+            rotate = 0.0000 90.0000 0.0000,
+        }
+    }
+    model ZCR_DollyHeldV2Full
+    {
+        mesh = weapons/2handed/zcr_dolly_full_v2.glb,
+        texture = weapons/2handed/zcr_dolly,
+        scale = 0.26,
+        invertX = true,
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 90.0000 0.0000,
+        }
+    }
+    model ZCR_DollyWorldV2Full
+    {
+        mesh = weapons/2handed/zcr_dolly_full_v2.glb,
+        texture = weapons/2handed/zcr_dolly,
+        scale = 0.26,
+        invertX = true,
+        attachment world
+        {
+            offset = -0.5700 -0.0300 0.0000,
+            rotate = 0.0000 90.0000 0.0000,
+        }
+    }
+}

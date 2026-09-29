@@ -1,0 +1,54 @@
+module SaucedWheelbarrow
+{
+    imports {Base}
+
+    item WheelbarrowWood
+    {
+        DisplayCategory = Container,
+        DisplayName = Wooden Wheelbarrow,
+        ItemType = base:container,
+        Weight = 5.0,
+        Icon = wheelbarrow_wood,
+        Capacity = 30,
+        WeightReduction = 75,
+        RunSpeedModifier = 0.70,
+        RequiresEquippedBothHands = true,
+        ConditionMax = 80,
+        ConditionLowerChance = 25,
+        CloseSound = DrawerWoodLargeClose,
+        OpenSound = DrawerWoodLargeOpen,
+        PutInSound = DrawerWoodLargeTransferItem,
+        Tags = SaucedCart;base:heavyitem,
+        Tooltip = Tooltip_SaucedCarts_ShoppingCart,
+        TorchDot = 0.5,
+        StaticModel = WheelbarrowWood,
+        WorldStaticModel = WheelbarrowWood,
+        ReplaceInPrimaryHand = WheelbarrowWood holdingcartright,
+        ReplaceInSecondHand = WheelbarrowWood holdingcartleft,
+    }
+
+    item WheelbarrowMetal
+    {
+        DisplayCategory = Container,
+        DisplayName = Metal Wheelbarrow,
+        ItemType = base:container,
+        Weight = 4.0,
+        Icon = wheelbarrow_metal,
+        Capacity = 40,
+        WeightReduction = 85,
+        RunSpeedModifier = 0.75,
+        RequiresEquippedBothHands = true,
+        ConditionMax = 120,
+        ConditionLowerChance = 25,
+        CloseSound = ChestMetalClose,
+        OpenSound = ChestMetalOpen,
+        PutInSound = ChestMetalTransferItem,
+        Tags = SaucedCart;base:heavyitem,
+        Tooltip = Tooltip_SaucedCarts_ShoppingCart,
+        TorchDot = 0.5,
+        StaticModel = WheelbarrowMetal,
+        WorldStaticModel = WheelbarrowMetal,
+        ReplaceInPrimaryHand = WheelbarrowMetal holdingcartright,
+        ReplaceInSecondHand = WheelbarrowMetal holdingcartleft,
+    }
+}

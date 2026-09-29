@@ -1,0 +1,12 @@
+PASS: Lua 5.1 syntax for all runtime files
+PASS: animation XML parses
+PASS: item/model script block structure
+PASS: all 14 variants preserve identity, contents, name and favorite during empty/full transitions
+PASS: normal cargo allowed; direct/nested carts, container cycles and invalid destination rejected
+PASS: pickup preserves the original cart/cargo; stale and concurrent second pickup, walls, vehicles, death, safehouse denial rejected
+PASS: client module loads; hotkey ignores text entry, other keys, hidden UI and pause
+All automated regression checks passed.
+PASS: presets; all 12 type/location controls; custom 0/100/fractional/clamped percentages
+PASS: independent types and areas; per-building caps; 100 reloads; persistent failures; module reload
+PASS: garage mappings; residential exclusion; old-save migration; existing dolly; client authority
+PASS: 28 unique sandbox options, all English labels present

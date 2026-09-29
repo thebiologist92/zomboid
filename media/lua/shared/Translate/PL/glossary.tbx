@@ -1,0 +1,1784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE martif PUBLIC "ISO 12200:1999A//DTD MARTIF core (DXFcdV04)//EN" "TBXcdv04.dtd">
+<martif type="TBX" xml:lang="en">
+    <martifHeader>
+        <fileDesc>
+            <sourceDesc>
+                <p>Weblate Glossary</p>
+            </sourceDesc>
+        </fileDesc>
+    </martifHeader>
+    <text>
+        <body>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Endurance</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>zmęczenie</term></tig></langSet>
+                <descrip>Group: IG_UI / Type: medical</descrip>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Durability</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>wytrzymałość</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Condition</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>stan</term></tig></langSet>
+            </termEntry>
+            <termEntry id="name of the show">
+                <langSet xml:lang="en"><tig><term>Magical Woodland</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Magiczny Las</term></tig></langSet>
+            </termEntry>
+            <termEntry id="most notably the admin or a server, but also wiki admin">
+                <langSet xml:lang="en"><tig><term>admin</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>administrator</term></tig></langSet>
+            </termEntry>
+            <termEntry id="a house that is claimed by a (group of) player(s), most notably in a multiplayer">
+                <langSet xml:lang="en"><tig><term>safehouse</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>schronienie</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>action</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>czynność</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>faction</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>frakcja</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Radial Menu</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>menu kołowe</term></tig></langSet>
+            </termEntry>
+            <termEntry id="item encumbrance, was previously &quot;weight&quot;">
+                <langSet xml:lang="en"><tig><term>encumbrance</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>obciążenie</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>craft</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>wytwórz</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>recipe</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>schemat</term></tig></langSet>
+            </termEntry>
+            <termEntry id="researchable recipes when inspecting items">
+                <langSet xml:lang="en"><tig><term>research</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>przyjrzyj się budowie</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Magical Woodland / PAWS character">
+                <langSet xml:lang="en"><tig><term>Freddy The Fox</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>lisek Freddy</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Magical Woodland / PAWS character">
+                <langSet xml:lang="en"><tig><term>Fluffyfoot the Rabbit</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>króliczek Puchatostopy</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Taco_del_Pancho</note>
+            </termEntry>
+            <termEntry id="Magical Woodland / PAWS character">
+                <langSet xml:lang="en"><tig><term>Jacques the Beaver</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>bóbr Jakub</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Magical Woodland / PAWS character">
+                <langSet xml:lang="en"><tig><term>Boris the Badger</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>borsuk Borys</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Magical Woodland / PAWS character">
+                <langSet xml:lang="en"><tig><term>Moley the Mole</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>kret Krecik</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Magical Woodland / PAWS character">
+                <langSet xml:lang="en"><tig><term>Pancake the Hedgehog</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>jeżyca Naleśniczka</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Magical Woodland / PAWS character">
+                <langSet xml:lang="en"><tig><term>Furbert the Squirrel</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>wiewiórka Furbert</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Magical Woodland / PAWS character">
+                <langSet xml:lang="en"><tig><term>Spiffo the Raccoon</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>szop Spiffo</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>crafting</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>wytwarzanie</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>recipes</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>schematy</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>inventory</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>ekwipunek</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>exercise</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>gimnastyka</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>fitness</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>kondycja</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>strength</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>siła</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>John Spiral</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Janusz Błąd</term></tig></langSet>
+            </termEntry>
+            <termEntry id="movie name, starring John Spiral (James Bond / Goldfinger reference)">
+                <langSet xml:lang="en"><tig><term>Operation Fort Knox</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Misja Fort Knox</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>mace</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>buzdygan</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>cudgel</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>maczuga</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>baseball bat</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>kij bejsbolowy</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>sawblade</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>tarcza piły tarczowej</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>railspike</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>gwóźdź kolejowy</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>maul</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>młot</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Jussaric Park reference">
+                <langSet xml:lang="en"><tig><term>Pleistocene Land</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Park Plejstoceński</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>mechanics</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>naprawa pojazdów</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>clothing</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>ubranie</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Twiggy's</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Twiggy’s</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Twiggy%27s with a proper apostrophe</note>
+            </termEntry>
+            <termEntry id="Name of the chain with the correct spelling as in the logo">
+                <langSet xml:lang="en"><tig><term>Sleep Eazzze Inn</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Sleep EazZze Inn</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Sleep_EazZze_Inn adjusted for a typo</note>
+            </termEntry>
+            <termEntry id="Name of the burger chain">
+                <langSet xml:lang="en"><tig><term>Spiffo's</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Spiffo’s</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Spiffo%27s with a proper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Home Sweet Gnome</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Home_Sweet_Gnome</note>
+            </termEntry>
+            <termEntry id="name of the store chain">
+                <langSet xml:lang="en"><tig><term>American Tire</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/American_Tire</note>
+            </termEntry>
+            <termEntry id="newspaper">
+                <langSet xml:lang="en"><tig><term>The Kentucky Herald</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/The_Kentucky_Herald</note>
+            </termEntry>
+            <termEntry id="newspaper">
+                <langSet xml:lang="en"><tig><term>The National Dispatch</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/The_National_Dispatch</note>
+            </termEntry>
+            <termEntry id="newspaper">
+                <langSet xml:lang="en"><tig><term>Knox Knews</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Knox_Knews</note>
+            </termEntry>
+            <termEntry id="newspaper">
+                <langSet xml:lang="en"><tig><term>Louisville Sun Times</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Louisville_Sun_Times</note>
+            </termEntry>
+            <termEntry id="typo">
+                <langSet xml:lang="en"><tig><term>Louisville Sun-Times</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Louisville Sun Times</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Pony Roam-O</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Pony_Roam-O</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>McCoy Logging Co.</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/McCoy_Logging_Co.</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Nolan's Used Cars</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Nolan’s Used Cars</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Nolan%27s_Used_Cars with proper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>West Maple Country Club</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/West_Maple_Country_Club</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>FashionaBelle</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/FashionaBelle</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Taco del Pancho</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Taco_del_Pancho</note>
+            </termEntry>
+            <termEntry id="store chain">
+                <langSet xml:lang="en"><tig><term>U-Store It</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/U-Store_It</note>
+            </termEntry>
+            <termEntry id="gas station chain">
+                <langSet xml:lang="en"><tig><term>Fossoil</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Fossoil</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Fossoil Field</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Fossoil_Field</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Sunstar Motel</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Sunstar_Motel</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Louisville Bruiser</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Louisville_Bruiser</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>The Sea Shanty</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/The_Sea_Shanty</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Scarlet Oak Distillery</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Scarlet_Oak_Distillery</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Ready Prep</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Ready_Prep</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Louisville State University</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Louisville_State_University</note>
+            </termEntry>
+            <termEntry id="short for Louisville State University">
+                <langSet xml:lang="en"><tig><term>LSU</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Louisville_State_University</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Pizza Whirled</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Pizza_Whirled</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Pile o' Crepe</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Pile o’ Crepe</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Pile_o%27_Crepe with proper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Knox Bank</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Knox_Bank</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Lowry Court</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Lowry_Court</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Upscale Mobility</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Upscale_Mobility</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Roxy's Roller Rink</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Roxy’s Roller Rink</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Roxy%27s_Roller_Rink with a proper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Elvee Arena</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Elvee_Arena</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Sure Fitness &amp; Boxing Club</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Sure_Fitness_%26_Boxing_Club</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Knox Pack Kitchens</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Knox_Pack_Kitchens</note>
+            </termEntry>
+            <termEntry id="wrong spelling">
+                <langSet xml:lang="en"><tig><term>Knox Kitchens</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Knox Pack Kitchens</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Meadshire Estate</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Meadshire_Estate</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Irvington Speedway</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Irvington_Speedway</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Greene's</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Greene’s</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Greene%27s with proper apostrphe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Farming &amp; Rural Supply</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Farming_%26_Rural_Supply</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Lenny's Car Repair</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Lenny’s Car Repair</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Lenny%27s_Car_Repair with proper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Al's Auto Shop</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Al’s Auto Shop</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Al%27s_Auto_Shop with proper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Nails &amp; Nuts</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Nails_%26_Nuts</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>West Point DIY</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/West_Point_DIY</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>E.P. Tools</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/E.P._Tools</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Diner in the Woods</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Diner_in_the_Woods</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>The Rusty Rifle</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/The_Rusty_Rifle</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>A-1 Hay</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/A-1_Hay</note>
+            </termEntry>
+            <termEntry id="typo">
+                <langSet xml:lang="en"><tig><term>A1 Hay</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>A-1 Hay</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>AMZ Steel</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/AMZ_Steel</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Beef Chunk Jerky Co.</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Beef_Chunk_Jerky_Co.</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Brott Cattle Farm</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Brott_Cattle_Farm</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Cat on a Hot Tin Grill</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Cat_on_a_Hot_Tin_Grill</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Five Alarm Firehouse Chili</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Five_Alarm_Firehouse_Chili</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Guns Unlimited</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Guns_Unlimited</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Hobbs &amp; Perkins Hardware</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Hobbs_%26_Perkins_Hardware</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Irvington Gun Club</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Irvington_Gun_Club</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Love Duet Bride &amp; Groom Boutique</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Love_Duet_Bride_%26_Groom_Boutique</note>
+            </termEntry>
+            <termEntry id="typo">
+                <langSet xml:lang="en"><tig><term>Love Duet Bride and Groom Boutique</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Love Duet Bride &amp; Groom Boutique</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Mad Dan's Den</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Mad Dan’s Den</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Mad_Dan%27s_Den with a proper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Ovo Farms</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Ovo_Farms</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Sammie's</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Sammie’s</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Sammie%27s with a proper apostrophe</note>
+            </termEntry>
+            <termEntry id="typo/alternative spelling">
+                <langSet xml:lang="en"><tig><term>Sleep EaZZZe Inn</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Sleep EazZze Inn</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>The Wizard's Keep</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>The Wizard’s Keep</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/The_Wizard%27s_Keep with a proper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Car Fix-ation</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Car_Fix-ation</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Onyx Drive-in Theater</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Onyx Drive-In Theater</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Onyx_Drive-In_Theater with the uppsercase "I", as with the logo</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>zombie</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>zombies</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>zombie</term></tig></langSet>
+            </termEntry>
+            <termEntry id="smallest, 1x1, game/map unit">
+                <langSet xml:lang="en"><tig><term>tile</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>pole</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Display Counter</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Lada wystawowa</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Carve</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Wystrugaj</term></tig></langSet>
+                <note from="translator">Recipe, except for pumpkin</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>hide</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>niegarbowana skóra</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>furred hide</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>włochata skóra</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>workstation</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>stanowisko robocze</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>breaded</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>do smażenia</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>fried</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>smażone</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>mahogany</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>mahoń</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>bookcase</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>regał</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>stool</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>stołek</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>counter</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>lada</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>canopy</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>zadaszenie</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>maple</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>klon</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>overhead cupboard</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>szafka wisząca</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>cupboard</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>lada</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>cubicle</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>przegroda biurowa</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>dumpster</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>kontener na śmieci</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>picnic table</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>stół piknikowy</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Cally's Gifts</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Cally’s Gifts</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Cally%27s_Gifts with a proper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>drawers</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>komoda</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>wardrobe</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>szafa</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>overhead counter</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>szafka wisząca</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>rug</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>dywanik</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>carpet</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>dywan</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>low table</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>stolik</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>flooring</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>panele</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>desk</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>biurko</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>with metal stand</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>z metalową podstawą</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Mama McFudgington's</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Mama McFudgington’s</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Mama_McFudgington%27s with proper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>metal</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>z metalu</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>wooden</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>z drewna</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>plastic</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>z plastiku</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Pharmahug</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Pharmahug</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Pharmahug</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>tool cabinet</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>szafka narzędziowa</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Seahorse Coffee</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Seahorse_Coffee</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Sheba Jewellers</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Sheba_Jewellers</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Shoed for the Stars</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Shoed_for_the_Stars</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Slurp Burp</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Slurp_Burp</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Dr. Oids</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Dr Oids</term></tig></langSet>
+                <note from="translator">Reference to https://pzwiki.net/wiki/Dr._Oids but without a dot in Polish</note>
+            </termEntry>
+            <termEntry id="movie title">
+                <langSet xml:lang="en"><tig><term>The Forgotten Element</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">reference to https://pzwiki.net/wiki/The_Forgotten_Element</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Tattoo 42</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Tattoo_42</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Time 4 Sport</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Time_4_Sport</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>T.I.S. Construction</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/T.I.S._Construction</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>TIS Construction</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>T.I.S. Construction</term></tig></langSet>
+                <note from="translator">wrong/alternative spelling of https://pzwiki.net/wiki/T.I.S._Construction</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Toys-R-Mine</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Toys-R-Mine</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>ValuTech</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/ValuTech</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Premium Technologies</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Premium_Technologies</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Premium Tech.</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Premium Technologies</term></tig></langSet>
+                <note from="translator">Shortened variant</note>
+            </termEntry>
+            <termEntry id="furniture">
+                <langSet xml:lang="en"><tig><term>tiles</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>płytki</term></tig></langSet>
+            </termEntry>
+            <termEntry id="furniture">
+                <langSet xml:lang="en"><tig><term>sink</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>umywalka</term></tig></langSet>
+            </termEntry>
+            <termEntry id="furniture">
+                <langSet xml:lang="en"><tig><term>tiled window</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>okno kwaterowe</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>wall shelf</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>półka ścienna</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>wall shelves</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>półki ścienne</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>toilet</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>sedes</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>checkered</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>w kratę</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>diagonal</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>ukośne</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Yummmers</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Yummmers</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Zippee Market</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Zippee_Market</note>
+            </termEntry>
+            <termEntry id="movie">
+                <langSet xml:lang="en"><tig><term>Dog Goblin</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Pies Goblin</term></tig></langSet>
+            </termEntry>
+            <termEntry id="game unit">
+                <langSet xml:lang="en"><tig><term>cell</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>komórka</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>cells</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>komórki</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>agriculture</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>uprawa roślin</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Running</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>bieganie</term></tig></langSet>
+            </termEntry>
+            <termEntry id="old name">
+                <langSet xml:lang="en"><tig><term>Sprinting</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>bieganie</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Lightfooted</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>ciche chodzenie</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Nimble</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>zwinność</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Sneaking</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>skradanie</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Axe</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>siekiery</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Long Blade</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>długie ostrza</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Short Blade</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>krótkie ostrza</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Spear</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>włócznie</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Maintenance</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>konserwacja</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Carpentry</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>stolarstwo</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Cooking</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>gotowanie</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>First Aid</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>pierwsza pomoc</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Electrical</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>elektryka</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Welding</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>spawanie</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Tailoring</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>krawiectwo</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Aiming</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>celowanie</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Reloading</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>przeładowywanie</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Fishing</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>wędkarstwo</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Tracking</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>tropienie</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Trapping</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>stawianie pułapek</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Foraging</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>zbieractwo</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Knapping</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>ciosanie</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Masonry</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>murarstwo</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Pottery</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>garncarstwo</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Carving</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>struganie</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Animal Care</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>opieka nad zwierzętami</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Blacksmithing</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>kowalstwo</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Butchering</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>oprawianie</term></tig></langSet>
+            </termEntry>
+            <termEntry id="skill">
+                <langSet xml:lang="en"><tig><term>Glassmaking</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>szklarstwo</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>tiles</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>pola</term></tig></langSet>
+            </termEntry>
+            <termEntry id="sandox options tooltip beginning">
+                <langSet xml:lang="en"><tig><term>If enabled, </term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Jeśli ta opcja jest włączona, </term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>muscle strain</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>nadwyrężenie mięśni</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>generator</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>agregat</term></tig></langSet>
+                <note from="translator">or "agregat prądotwórczy"</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>boulder</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>głaz</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>workstations</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>stanowiska robocze</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Knox Country</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>GigaMart</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/GigaMart</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Barg-N-Clothes</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Barg-N-Clothes</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Barg-n-Clothes</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Barg-N-Clothes</term></tig></langSet>
+                <note from="translator">typo/alternative spelling</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Book Naked</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Book_Naked</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Hugo Plush</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Hugo_Plush</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Better Bed Than Dead</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Better_Bed_Than_Dead</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Better Bed than Dead</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Better Bed Than Dead</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Awl Work and Sew Play</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Awl_Work_and_Sew_Play</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Jay's Chicken</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Jay’s Chicken</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Jay%27s_Chicken with a proper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Lola Limon</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Lola_Limon</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Hair O Genesis</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Hair_O_Genesis</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Stars &amp; Stripes</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Stars_%26_Stripes</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Beer &amp; Liquor</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Beer_%26_Liquor</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>BBBQ</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/BBBQ</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Thumbs of Green</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Thumbs_of_Green</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Palm Travel</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Palm_Travel</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>The Wandering Sashimi</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/The_Wandering_Sashimi</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Electron House</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Electron_House</note>
+            </termEntry>
+            <termEntry id="store chain">
+                <langSet xml:lang="en"><tig><term>Saucy</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Saucy</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Expresso Espress</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Expresso_Espress</note>
+            </termEntry>
+            <termEntry id="store chain">
+                <langSet xml:lang="en"><tig><term>Noteworthy</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Noteworthy</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Markson &amp; Co</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Markson_%26_Co</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Have a Butcher's</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Have a Butcher’s</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Have_a_Butcher%27s with proper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Groovy Chic</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Groovy_Chic</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Hickory Bakery Box</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Hickory_Bakery_Box</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Family Fashion</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Family_Fashion</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Seat Yourself Furniture</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Seat_Yourself_Furniture</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Seat Yourself</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Seat Yourself Furniture</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Churns-R-Us</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Churns-R-Us</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>5 Bux or Less</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>5 Bux or Less</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/5_Bux_or_Less</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Optima Eyes</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Optima_Eyes</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Carton &amp; Sydney Law Services</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Carton_%26_Sydney_Law_Services</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Genteel-y Used</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Genteel-y_Used</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Star-E-Plex</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Star-E-Plex</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Toyz Toyz Toyz</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Toyz_Toyz_Toyz</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>BE Beauty</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/BE_Beauty</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Be Beauty</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>BE Beauty</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Crossroads Mall</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Crossroads_Mall</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Cardinal Plaza</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Cardinal_Plaza</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>The Grand Ohio Mall</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/The_Grand_Ohio_Mall</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Grand Ohio Mall</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>The Grand Ohio Mall</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Pondview Shopping Center</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Pondview_Shopping_Center</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>High Street Apartments</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/High_Street_Apartments</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Red Oak Apartments</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Red_Oak_Apartments</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Du Case Apartments</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Du_Case_Apartments</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Ekron Community College</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Ekron_Community_College</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>vending machine</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>automat sprzedający</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Cáñamo">
+                <langSet xml:lang="en"><tig><term>Burlap</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>juta</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Spiffo Corp</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Mass-Genfac Co.</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Mass-Genfac_Co.</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Mass-Genfac</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Mass-Genfac Co.</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Egenerex</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Egenerex</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>United Shipping Logistics</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/United_Shipping_Logistics</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Perfick Potato Co.</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Perfick_Potato_Co.</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Kitten Knives</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Kitten_Knives</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>FunXtreme</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>FunXtreme</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/FunXtreme</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Fun X-Treme</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>FunXtreme</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>ABCDriving School</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/ABCDriving_School</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Aitor Wire Company</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Aitor_Wire_Company</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>AmeriGlobe Communications</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/AmeriGlobe_Communications</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>AmeriGlobe</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Amerglobe</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>AmeriGlobe</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Bail Bonds</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Bail_Bonds</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Better Furnishings</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Better_Furnishings</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Brac Brick Factory</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Brac_Brick_Factory</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Enigma Books</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Enigma_Books</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Family Dentistry</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Family_Dentistry</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Family Funzone</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Family_Funzone</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Fun-2-3 Childcare</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Fun-2-3_Childcare</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Goodman Legal Services</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Goodman_Legal_Services</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>H. Smith Attorney</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/H._Smith_Attorney</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Haircuts n' More</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Haircuts n’ More</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Haircuts_n%27_More with proper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Homeward Real Estate</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Homeward Real Estate</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Homeward_Real_Estate</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Inkr Alley</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Inkr_Alley</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Juke Box Bowling</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Juke_Box_Bowling</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Knox Telecommunications</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Knox_Telecommunications</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>KY Transit</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/KY_Transit</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Lectromax Manufacturing</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Lectromax_Manufacturing</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Louisville Boat Club</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Louisville_Boat_Club</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Maps Unlimited</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Maps_Unlimited</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Mendy's Eatery</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Mendy’s Eatery</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Mendy%27s_Eatery with proper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Milk 'N' More</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Milk ‘N’ More</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Milk_%27N%27_More with proper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>MindPeace Insurance</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/MindPeace_Insurance</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Neon Flower Salon</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Neon_Flower_Salon</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Nite Glo</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Nite_Glo</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Olympia Department Store</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Olympia_Department_Store</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Palette Pop! Art Supplies</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Palette_Pop!_Art_Supplies</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Palette Pop Art Supplies</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Palette Pop! Art Supplies</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Pawn $$$hop</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Pawn_$$$hop</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Pet Health Pawmise</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Pet_Health_Pawmise</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Posh Box</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Posh_Box</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Purrfect Barkner Pet Supplies</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Purrfect_Barkner_Pet_Supplies</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Raney &amp; Daye Investment Firm</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Raney_%26_Daye_Investment_Firm</note>
+            </termEntry>
+            <termEntry id="typo">
+                <langSet xml:lang="en"><tig><term>Raney &amp; Day Investment Firm</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Raney &amp; Daye Investment Firm</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Riverwood Boat Club</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Riverwood_Boat_Club</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Scenic Mile Car Dealership</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Scenic_Mile_Car_Dealership</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Sky Blue Banking</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Sky_Blue_Banking</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>SlimTax Accounting</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/SlimTax_Accounting</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Spitfire Fashion</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Spitfire_Fashion</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Sucrafruit Circus</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Sucrafruit_Circus</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Sweet Sugar Beauty</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Sweet_Sugar_Beauty</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>The Black Saddle</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/The_Black_Saddle</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>The Exquisite Pearl</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/The_Exquisite_Pearl</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>The Plump Cornucopia</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/The_Plump_Cornucopia</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>The Top Hanger</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/The_Top_Hanger</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>The Velvet Tassel</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/The_Velvet_Tassel</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Topcrown Plaza</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Topcrown_Plaza</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Top Crown Plaza</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Topcrown Plaza</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Worm of Books</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Worm_of_Books</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Your Closet</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Your_Closet</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Zac's Hardware</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Zac’s Hardware</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Zac%27s_Hardware with proper apostrope</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Finnegan Research Group</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Finnegan_Research_Group</note>
+            </termEntry>
+            <termEntry id="wrong name">
+                <langSet xml:lang="en"><tig><term>Finnegan Group</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Finnegan Research Group</term></tig></langSet>
+            </termEntry>
+            <termEntry id="abbreviation">
+                <langSet xml:lang="en"><tig><term>FRG</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>McCoy Logging</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>McCoy Logging Co.</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Body Chisel Gym &amp; Fitness</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Body_Chisel_Gym_%26_Fitness</note>
+            </termEntry>
+            <termEntry id="alternative spelling">
+                <langSet xml:lang="en"><tig><term>Body Chisel Gym and Fitness</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Body Chisel Gym &amp; Fitness</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Drag Racing</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Drag_Racing</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Dressed to the 90s</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Dressed_to_the_90s</note>
+            </termEntry>
+            <termEntry id="wrong spelling">
+                <langSet xml:lang="en"><tig><term>Dressed to the '90s</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Dressed to the 90s</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Go Flash</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Go_Flash</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Luthex</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">name of the company making watches</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Medical Center</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Medical_Center</note>
+            </termEntry>
+            <termEntry id="wrong name">
+                <langSet xml:lang="en"><tig><term>MedicalCenter</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Medical Center</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>March Ridge Construction</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/March_Ridge_Construction_Dash_Bulldriver</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Knox Distillery</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Knox_Distillery</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Mass Genfac</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Mass-Genfac Co.</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Mass GenFac</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Mass-Genfac Co.</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Lectromax</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Lectromax Manufacturing</term></tig></langSet>
+            </termEntry>
+            <termEntry id="John Spiral movie">
+                <langSet xml:lang="en"><tig><term>Dying Strike</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Rated G</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Klasyfikacja G (bez ograniczeń)</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Rated PG</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Klasyfikacja PG (za zgodą opiekuna)</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Rated PG-13</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Klasyfikacja PG-13 (za zgodą opiekuna)</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Rated R</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Klasyfikacja R (za zgodą opiekuna)</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Rated NC-17</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Klasyfikacja NC-17 (dla dorosłych)</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>The Cook Show</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Proste gotowanie</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Exposure Survival</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Szkoła przetrwania</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Hug Bunnies</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Króliczki Przytulaski</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>I'm Tooks Bear! Let's go on an adventure!</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>„Jestem miś Tooks! Przeżyjmy przygodę!”</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>CDC</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pl.wikipedia.org/wiki/Centers_for_Disease_Control_and_Prevention</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Center for Disease Control</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>&lt;bzzt&gt;</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>&lt;bszzt&gt;</term></tig></langSet>
+                <note from="translator">radio static</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>&lt;fzzt&gt;</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>&lt;fszzt&gt;</term></tig></langSet>
+                <note from="translator">radio static</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>&lt;wzzt&gt;</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>&lt;wszzt&gt;</term></tig></langSet>
+                <note from="translator">radio static</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>I Love Wok &amp; Rolls</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>I Heart Wok &amp; Rolls</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>I Love Wok &amp; Rolls</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>I love Wok and Rolls</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>I Love Wok &amp; Rolls</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>I *heart* Wok and Rolls</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>I Love Wok &amp; Rolls</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>I ❤️ Wok &amp; Rolls</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>I Love Wok &amp; Rolls</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Grow Haven</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Grow_Haven</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Jolly Good Fish + Chips</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Jolly_Good_Fish_%2B_Chips</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Jolly Good Fish and Chips</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Jolly Good Fish + Chips</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Jolly Good Fish &amp; Chips</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Jolly Good Fish + Chips</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Tuned In</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Tuned_In</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Homeware Store</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Homeware_Store</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Purple Dragon Jewels</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Purple Dragon Jewels</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Purple_Dragon_Jewels</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Re. Gifts</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Re._Gifts</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Jones Art Prints</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Jones_Art_Prints</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Pat's Pastries</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Pat’s Pastries</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Pat%27s_Pastries with ptoper apostrophe</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>SpecialEyes</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/SpecialEyes</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Homeware Sweet Homeware</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Homeware_Sweet_Homeware</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Page Turners</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Page_Turners</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Fashion 4 Less</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Fashion_4_Less</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Sweet Things</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Sweet_Things</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Louisville Souvenirs</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Louisville_Souvenirs</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Valu-Insurance</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Valu In$urance</term></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Valu_In$urance</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Valu Insurance</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Valu In$urance</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>ValuInsurance</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Valu In$urance</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>The Crossroads Bar</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/The_Crossroads_Bar</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Crossroads Medical Center</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/Crossroads_Medical_Center</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Gas-2-Go</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Gas to Go</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Gas-2-Go</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Knox Infection</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>zakażenie z Knox</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Knox Event</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>incydent z Knox</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>NNR</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+                <note from="translator">https://pzwiki.net/wiki/NNR_Radio</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>QC</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>radca królewski</term></tig></langSet>
+                <note from="translator">Queen’s Counsel</note>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>FCC</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term/></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>cyberkiller</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>cyberzabójca</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Dead Wrong">
+                <langSet xml:lang="en"><tig><term>Larry</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Cezary</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Dead Wrong">
+                <langSet xml:lang="en"><tig><term>Salatch</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Arni</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Dead Wrong">
+                <langSet xml:lang="en"><tig><term>"Filthy"</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>„Niedomyty”</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Dead Wrong">
+                <langSet xml:lang="en"><tig><term>Mindy</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Katarzyna</term></tig></langSet>
+            </termEntry>
+            <termEntry id="Dead Wrong">
+                <langSet xml:lang="en"><tig><term>Cooper</term></tig></langSet>
+                <langSet xml:lang="PL"><tig><term>Stępień</term></tig></langSet>
+            </termEntry>
+        </body>
+    </text>
+</martif>
