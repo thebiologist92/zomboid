@@ -10,7 +10,7 @@
 	<m_Conditions>
 		<m_Name>Weapon</m_Name>
 		<m_Type>STRING</m_Type>
-		<m_Value>cart</m_Value>
+		<m_Value>unifiedcart</m_Value>
 	</m_Conditions>
 	<m_Transitions>
 		<m_Target>unifiedWalkCart</m_Target>

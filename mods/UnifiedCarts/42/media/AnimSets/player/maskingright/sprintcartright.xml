@@ -8,7 +8,7 @@
 	<m_Conditions>
 		<m_Name>RightHandMask</m_Name>
 		<m_Type>STRING</m_Type>
-		<m_Value>unifiedunifiedHoldingCartRight</m_Value>
+		<m_Value>unifiedHoldingCartRight</m_Value>
 	</m_Conditions>
 	<m_Conditions>
 		<m_Name>isMoving</m_Name>
@@ -36,7 +36,7 @@
 		<m_Value>false</m_Value>
 	</m_Conditions>
 	<m_Transitions>
-		<m_Target>unifiedunifiedHoldingCartRight</m_Target>
+		<m_Target>unifiedHoldingCartRight</m_Target>
 		<m_blendInTime>0.3</m_blendInTime>
 		<m_blendOutTime>0.3</m_blendOutTime>
 	</m_Transitions>

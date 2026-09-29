@@ -77,8 +77,8 @@ end
 function UnifiedCarts.applyCartPose(character)
     if not character then return end
     character:setVariable("Weapon", "cart")
-    character:setVariable("RightHandMask", "unifiedunifiedHoldingCartRight")
-    character:setVariable("LeftHandMask", "unifiedunifiedHoldingCartLeft")
+    character:setVariable("RightHandMask", "unifiedHoldingCartRight")
+    character:setVariable("LeftHandMask", "unifiedHoldingCartLeft")
 end
 
 function UnifiedCarts.clearCartPose(character)

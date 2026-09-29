@@ -18,8 +18,8 @@ module UnifiedCarts
         AcceptItemFunction = UnifiedCarts.acceptItem,
         StaticModel = UnifiedShoppingCartModel,
         WorldStaticModel = UnifiedShoppingCartModel,
-        ReplaceInPrimaryHand = UnifiedShoppingCartModel unifiedunifiedHoldingCartRight,
-        ReplaceInSecondHand = UnifiedShoppingCartModel unifiedunifiedHoldingCartLeft,
+        ReplaceInPrimaryHand = UnifiedShoppingCartModel unifiedHoldingCartRight,
+        ReplaceInSecondHand = UnifiedShoppingCartModel unifiedHoldingCartLeft,
         Tooltip = Tooltip_UnifiedCarts_ShoppingCart,
     }
 }
