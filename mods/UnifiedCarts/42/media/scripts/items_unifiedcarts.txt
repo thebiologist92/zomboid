@@ -1,0 +1,24 @@
+module UnifiedCarts
+{
+    item ShoppingCart
+    {
+        DisplayCategory = Container,
+        DisplayName = Shopping Cart,
+        ItemType = base:container,
+        Weight = 8.0,
+        Icon = ShoppingCart,
+        Capacity = 50,
+        WeightReduction = 95,
+        RunSpeedModifier = 0.90,
+        RequiresEquippedBothHands = true,
+        CloseSound = LockerMetalClose,
+        OpenSound = LockerMetalOpen,
+        PutInSound = LockerMetalTransferItem,
+        Tags = UnifiedCart;base:heavyitem,
+        StaticModel = ShoppingCartModel,
+        WorldStaticModel = ShoppingCartModel,
+        ReplaceInPrimaryHand = ShoppingCartModel holdingcartright,
+        ReplaceInSecondHand = ShoppingCartModel holdingcartleft,
+        Tooltip = Tooltip_UnifiedCarts_ShoppingCart,
+    }
+}

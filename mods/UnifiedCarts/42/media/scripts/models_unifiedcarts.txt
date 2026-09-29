@@ -1,0 +1,77 @@
+module Base
+{
+    model ShoppingCartModel
+    {
+        mesh = weapons/2handed/ShoppingCart_PZ|ShoppingCart,
+        texture = weapons/2handed/ShoppingCart_Atlas,
+        scale = 1.00,
+        invertX = true,
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = -0.4800 0.4300 -0.0700,
+            rotate = 0.0 180.0 105.0,
+            scale = 0.9500,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = -0.4800 0.4300 -0.0700,
+            rotate = 0.0 180.0 105.0,
+            scale = 0.9500,
+        }
+    }
+
+    model ShoppingCartPartialModel
+    {
+        mesh = weapons/2handed/ShoppingCartHalfFull_PZ|ShoppingCart.Partial,
+        texture = weapons/2handed/ShoppingCart_Atlas,
+        scale = 1.00,
+        invertX = true,
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = -0.4800 0.4300 -0.0700,
+            rotate = 0.0 180.0 105.0,
+            scale = 0.9500,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = -0.4800 0.4300 -0.0700,
+            rotate = 0.0 180.0 105.0,
+            scale = 0.9500,
+        }
+    }
+
+    model ShoppingCartFullModel
+    {
+        mesh = weapons/2handed/ShoppingCartFull_PZ|ShoppingCart.Full,
+        texture = weapons/2handed/ShoppingCart_Atlas,
+        scale = 1.00,
+        invertX = true,
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+        attachment Bip01_Prop1
+        {
+            offset = -0.4800 0.4300 -0.0700,
+            rotate = 0.0 180.0 105.0,
+            scale = 0.9500,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = -0.4800 0.4300 -0.0700,
+            rotate = 0.0 180.0 105.0,
+            scale = 0.9500,
+        }
+    }
+}
