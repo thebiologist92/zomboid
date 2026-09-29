@@ -1,6 +1,8 @@
 name=Unified Carts - Proof of Concept
 id=UnifiedCarts
 versionMin=42.20
-modversion=0.1.0
+modversion=0.1.1
 authors=Unified Carts development
-description=Unified pushable cart framework proof of concept for Project Zomboid Build 42.20. Includes a reusable supermarket shopping cart implementation.
+require=SaucedCarts
+loadModAfter=SaucedCarts
+description=Unified pushable cart framework proof of concept for Project Zomboid Build 42.20. Includes a reusable supermarket shopping cart implementation. Uses SaucedCarts only as the temporary provider for the reused shopping-cart mesh, texture and character animation assets.
