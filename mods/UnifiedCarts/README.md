@@ -2,17 +2,8 @@
 
 Build 42.20 proof-of-concept framework for pushable and pullable carts.
 
-Current implementation:
-- Unified cart registry
-- Push movement mode
-- Metal supermarket shopping cart
-- Two-hand push pose
-- Walk/run/sprint cart animations
-- Ground pickup and release
-- Inventory pickup/equip
-- Empty/partial/full visual models
-- Container nesting protection
-- Multiplayer-safe ground pickup validation
-- No durability, condition, repairs, breaking, or destruction
+Current implementation: a metal supermarket shopping cart registered through the unified cart API.
 
-The framework is deliberately small at this stage. New carts should be added through the registry rather than by duplicating interaction code.
+The framework contains no durability, condition, repair, breaking, or destruction system. It uses the existing SaucedCarts shopping-cart mesh/texture and cart animation assets as references/assets and is otherwise independent of SaucedCarts and ZuperCarts.
+
+The registry already has a movementMode field (`push`/`pull`) so the future pull system can be added without duplicating cart definitions.
