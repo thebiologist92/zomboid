@@ -10,9 +10,9 @@ local ok, err = UnifiedCarts.registerCart("UnifiedCarts.ShoppingCart", {
     movementMode = "push",
 
     visualModels = {
-        empty = "ShoppingCartModel",
-        partial = "ShoppingCartPartialModel",
-        full = "ShoppingCartFullModel",
+        empty = "UnifiedShoppingCartModel",
+        partial = "UnifiedShoppingCartPartialModel",
+        full = "UnifiedShoppingCartFullModel",
     },
 
     spawnRooms = {

@@ -1,6 +1,6 @@
 module Base
 {
-    model ShoppingCartModel
+    model UnifiedShoppingCartModel
     {
         mesh = weapons/2handed/ShoppingCart_PZ|ShoppingCart,
         texture = weapons/2handed/ShoppingCart_Atlas,
@@ -25,7 +25,7 @@ module Base
         }
     }
 
-    model ShoppingCartPartialModel
+    model UnifiedShoppingCartPartialModel
     {
         mesh = weapons/2handed/ShoppingCartHalfFull_PZ|ShoppingCart.Partial,
         texture = weapons/2handed/ShoppingCart_Atlas,
@@ -50,7 +50,7 @@ module Base
         }
     }
 
-    model ShoppingCartFullModel
+    model UnifiedShoppingCartFullModel
     {
         mesh = weapons/2handed/ShoppingCartFull_PZ|ShoppingCart.Full,
         texture = weapons/2handed/ShoppingCart_Atlas,

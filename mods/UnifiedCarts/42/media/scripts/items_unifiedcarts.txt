@@ -16,10 +16,10 @@ module UnifiedCarts
         PutInSound = LockerMetalTransferItem,
         Tags = UnifiedCart;base:heavyitem,
         AcceptItemFunction = UnifiedCarts.acceptItem,
-        StaticModel = ShoppingCartModel,
-        WorldStaticModel = ShoppingCartModel,
-        ReplaceInPrimaryHand = ShoppingCartModel holdingcartright,
-        ReplaceInSecondHand = ShoppingCartModel holdingcartleft,
+        StaticModel = UnifiedShoppingCartModel,
+        WorldStaticModel = UnifiedShoppingCartModel,
+        ReplaceInPrimaryHand = UnifiedShoppingCartModel unifiedunifiedHoldingCartRight,
+        ReplaceInSecondHand = UnifiedShoppingCartModel unifiedunifiedHoldingCartLeft,
         Tooltip = Tooltip_UnifiedCarts_ShoppingCart,
     }
 }
