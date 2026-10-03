@@ -10,7 +10,7 @@ package_unified_carts:
   stage: package
   image: alpine:3.20
   script:
-    - apk add --no-cache zip curl git
+    - apk add --no-cache zip curl git unzip
     - git checkout "$CI_COMMIT_SHA"
     - git sparse-checkout init --cone
     - git sparse-checkout set steamapps/workshop/content/108600/3651954650/mods/SaucedCarts/42 steamapps/workshop/content/108600/3653487630/mods/SaucedTrolleys/42
@@ -64,44 +64,19 @@ package_unified_carts:
       description=Standalone merge of SaucedCarts and SaucedTrolleys. Includes pushable shopping carts and trolleys.
       poster=poster.png
       icon=icon.png
-      modversion=0.1.1
+      modversion=0.1.2
       versionMin=42.15.0
       pack=SaucedCarts
       incompatible=TMC_Trolley
       EOF
-    - |
-      python3 - <<'PY'
-      from pathlib import Path
-      p = Path("build/UnifiedCarts/42/media/scripts/models_saucedtrolley.txt")
-      s = p.read_text()
-      s = s.replace("offset = -0.4800 0.4300 -0.0700,", "offset = -0.4800 -0.4300 -0.0700,")
-      p.write_text(s)
-      PY
+    - sed -i 's/offset = -0.4800 0.4300 -0.0700,/offset = -0.4800 -0.4300 -0.0700,/g' build/UnifiedCarts/42/media/scripts/models_saucedtrolley.txt
     - cd build
-    - zip -qr ../UnifiedCarts_SaucedMerged_v0.1.1.zip UnifiedCarts
+    - zip -qr ../UnifiedCarts_SaucedMerged_v0.1.2.zip UnifiedCarts
     - cd ..
-    - unzip -t UnifiedCarts_SaucedMerged_v0.1.1.zip
-    - |
-      python3 - <<'PY'
-      import os, uuid, urllib.request
-      url = os.environ["CI_API_V4_URL"] + "/projects/" + os.environ["CI_PROJECT_ID"] + "/uploads"
-      data = open("UnifiedCarts_SaucedMerged_v0.1.1.zip", "rb").read()
-      boundary = "----UnifiedCarts" + uuid.uuid4().hex
-      body = (
-          b"--" + boundary.encode() + b"\r\n" +
-          b'Content-Disposition: form-data; name="file"; filename="UnifiedCarts_SaucedMerged_v0.1.1.zip"\r\n' +
-          b"Content-Type: application/zip\r\n\r\n" +
-          data + b"\r\n--" + boundary.encode() + b"--\r\n"
-      )
-      req = urllib.request.Request(
-          url, data=body, method="POST",
-          headers={"JOB-TOKEN": os.environ["CI_JOB_TOKEN"],
-                   "Content-Type": "multipart/form-data; boundary=" + boundary})
-      with urllib.request.urlopen(req) as r:
-          print(r.read().decode())
-      PY
+    - unzip -t UnifiedCarts_SaucedMerged_v0.1.2.zip
+    - curl --fail --location --silent --show-error         --header "JOB-TOKEN: $CI_JOB_TOKEN"         --form "file=@UnifiedCarts_SaucedMerged_v0.1.2.zip"         "$CI_API_V4_URL/projects/$CI_PROJECT_ID/uploads"
   artifacts:
     when: always
     paths:
-      - UnifiedCarts_SaucedMerged_v0.1.1.zip
+      - UnifiedCarts_SaucedMerged_v0.1.2.zip
     expire_in: 7 days
