@@ -1,0 +1,70 @@
+stages:
+  - package
+
+package_unified_carts:
+  stage: package
+  image: alpine:3.20
+  script:
+    - apk add --no-cache zip curl
+    - rm -rf build/UnifiedCarts
+    - mkdir -p build/UnifiedCarts/42
+    - cp -a steamapps/workshop/content/108600/3651954650/mods/SaucedCarts/42/. build/UnifiedCarts/42/
+    - mkdir -p build/UnifiedCarts/42/media/lua/shared/MyCartAddon
+    - cp steamapps/workshop/content/108600/3653487630/mods/SaucedTrolleys/42/media/lua/shared/MyCartAddon/init.lua build/UnifiedCarts/42/media/lua/shared/MyCartAddon/init.lua
+    - mkdir -p build/UnifiedCarts/42/media/models_X/weapons/2handed
+    - cp steamapps/workshop/content/108600/3653487630/mods/SaucedTrolleys/42/media/models_X/weapons/2handed/TrolleyCart.fbx build/UnifiedCarts/42/media/models_X/weapons/2handed/
+    - cp steamapps/workshop/content/108600/3653487630/mods/SaucedTrolleys/42/media/models_X/weapons/2handed/TrolleyCartFull.fbx build/UnifiedCarts/42/media/models_X/weapons/2handed/
+    - cp steamapps/workshop/content/108600/3653487630/mods/SaucedTrolleys/42/media/models_X/weapons/2handed/TrolleyCartPartial.fbx build/UnifiedCarts/42/media/models_X/weapons/2handed/
+    - mkdir -p build/UnifiedCarts/42/media/scripts
+    - cp steamapps/workshop/content/108600/3653487630/mods/SaucedTrolleys/42/media/scripts/items_saucedtrolley.txt build/UnifiedCarts/42/media/scripts/
+    - cp steamapps/workshop/content/108600/3653487630/mods/SaucedTrolleys/42/media/scripts/models_saucedtrolley.txt build/UnifiedCarts/42/media/scripts/
+    - cp steamapps/workshop/content/108600/3653487630/mods/SaucedTrolleys/42/media/scripts/recipes_saucedtrolley.txt build/UnifiedCarts/42/media/scripts/
+    - mkdir -p build/UnifiedCarts/42/media/textures/weapons/2handed
+    - cp steamapps/workshop/content/108600/3653487630/mods/SaucedTrolleys/42/media/textures/Item_TrolleyCart.png build/UnifiedCarts/42/media/textures/
+    - cp steamapps/workshop/content/108600/3653487630/mods/SaucedTrolleys/42/media/textures/weapons/2handed/TrolleyCart_Atlas.png build/UnifiedCarts/42/media/textures/weapons/2handed/
+    - |
+      python3 - <<'PY'
+      from pathlib import Path
+      p = Path("build/UnifiedCarts/42/mod.info")
+      p.write_text("""name=Unified Carts - SaucedCarts + SaucedTrolleys
+      id=UnifiedCarts
+      author=Dark Sauce / unified build
+      description=Standalone merge of SaucedCarts and SaucedTrolleys. Includes pushable shopping carts and trolleys.
+      poster=poster.png
+      icon=icon.png
+      modversion=0.1.0
+      versionMin=42.15.0
+      pack=SaucedCarts
+      incompatible=TMC_Trolley
+      """)
+      m = Path("build/UnifiedCarts/42/media/scripts/models_saucedtrolley.txt")
+      s = m.read_text()
+      s = s.replace("offset = -0.4800 0.4300 -0.0700,", "offset = -0.4800 -0.4300 -0.0700,")
+      m.write_text(s)
+      PY
+    - cd build
+    - zip -qr ../UnifiedCarts_SaucedMerged_v0.1.0.zip UnifiedCarts
+    - cd ..
+    - |
+      python3 - <<'PY'
+      import json, os, mimetypes, urllib.request, uuid
+      url = os.environ["CI_API_V4_URL"] + "/projects/" + os.environ["CI_PROJECT_ID"] + "/uploads"
+      boundary = "----ChatGPT" + uuid.uuid4().hex
+      data = open("UnifiedCarts_SaucedMerged_v0.1.0.zip", "rb").read()
+      head = (
+        b"--" + boundary.encode() + b"\r\n" +
+        b'Content-Disposition: form-data; name="file"; filename="UnifiedCarts_SaucedMerged_v0.1.0.zip"\r\n' +
+        b"Content-Type: application/zip\r\n\r\n"
+      )
+      body = head + data + b"\r\n--" + boundary.encode() + b"--\r\n"
+      req = urllib.request.Request(url, data=body, method="POST",
+          headers={"JOB-TOKEN": os.environ["CI_JOB_TOKEN"],
+                   "Content-Type": "multipart/form-data; boundary=" + boundary})
+      with urllib.request.urlopen(req) as r:
+          print(r.read().decode())
+      PY
+  artifacts:
+    when: always
+    paths:
+      - UnifiedCarts_SaucedMerged_v0.1.0.zip
+    expire_in: 7 days
