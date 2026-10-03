@@ -62,20 +62,19 @@ package_unified_carts:
     description=Standalone merge of SaucedCarts and SaucedTrolleys. Includes pushable shopping carts and trolleys.
     poster=poster.png
     icon=icon.png
-    modversion=0.1.4
+    modversion=0.1.5
     versionMin=42.15.0
     pack=SaucedCarts
     incompatible=TMC_Trolley
     EOF
     sed -i 's/offset = -0.4800 0.4300 -0.0700,/offset = -0.4800 -0.4300 -0.0700,/g' build/UnifiedCarts/42/media/scripts/models_saucedtrolley.txt
     cd build
-    zip -qr ../UnifiedCarts_SaucedMerged_v0.1.4.zip UnifiedCarts
+    zip -qr ../UnifiedCarts_SaucedMerged_v0.1.5.zip UnifiedCarts
     cd ..
-    unzip -t UnifiedCarts_SaucedMerged_v0.1.4.zip
-    echo "PUBLIC_ARTIFACT_URL:"
-    curl --fail --location --silent --show-error --form "file=@UnifiedCarts_SaucedMerged_v0.1.4.zip" https://tmpfiles.org/api/v1/upload
+    unzip -t UnifiedCarts_SaucedMerged_v0.1.5.zip
+    echo "GENERIC_PACKAGE_URL: $CI_API_V4_URL/projects/$CI_PROJECT_ID/packages/generic/unified-carts/0.1.5/UnifiedCarts_SaucedMerged_v0.1.5.zip"
+    curl --fail --location --silent --show-error --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file UnifiedCarts_SaucedMerged_v0.1.5.zip "$CI_API_V4_URL/projects/$CI_PROJECT_ID/packages/generic/unified-carts/0.1.5/UnifiedCarts_SaucedMerged_v0.1.5.zip"
   artifacts:
-    when: always
     paths:
-      - UnifiedCarts_SaucedMerged_v0.1.4.zip
+      - UnifiedCarts_SaucedMerged_v0.1.5.zip
     expire_in: 7 days
