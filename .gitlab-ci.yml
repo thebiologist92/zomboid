@@ -62,19 +62,24 @@ package_unified_carts:
     description=Standalone merge of SaucedCarts and SaucedTrolleys. Includes pushable shopping carts and trolleys.
     poster=poster.png
     icon=icon.png
-    modversion=0.1.5
+    modversion=0.1.6
     versionMin=42.15.0
     pack=SaucedCarts
     incompatible=TMC_Trolley
     EOF
     sed -i 's/offset = -0.4800 0.4300 -0.0700,/offset = -0.4800 -0.4300 -0.0700,/g' build/UnifiedCarts/42/media/scripts/models_saucedtrolley.txt
     cd build
-    zip -qr ../UnifiedCarts_SaucedMerged_v0.1.5.zip UnifiedCarts
+    zip -qr ../UnifiedCarts_SaucedMerged_v0.1.6.zip UnifiedCarts
     cd ..
-    unzip -t UnifiedCarts_SaucedMerged_v0.1.5.zip
-    echo "GENERIC_PACKAGE_URL: $CI_API_V4_URL/projects/$CI_PROJECT_ID/packages/generic/unified-carts/0.1.5/UnifiedCarts_SaucedMerged_v0.1.5.zip"
-    curl --fail --location --silent --show-error --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file UnifiedCarts_SaucedMerged_v0.1.5.zip "$CI_API_V4_URL/projects/$CI_PROJECT_ID/packages/generic/unified-carts/0.1.5/UnifiedCarts_SaucedMerged_v0.1.5.zip"
+    unzip -t UnifiedCarts_SaucedMerged_v0.1.6.zip
+    # Also store the exact binary ZIP as a normal Git blob on the temporary build branch.
+    mkdir -p unified_carts_build
+    cp UnifiedCarts_SaucedMerged_v0.1.6.zip unified_carts_build/UnifiedCarts_SaucedMerged_v0.1.6.data
+    printf '%s' '{"branch":"'"$CI_COMMIT_REF_NAME"'","commit_message":"Store unified carts build artifact v0.1.6","content":"' > /tmp/request.json
+    base64 unified_carts_build/UnifiedCarts_SaucedMerged_v0.1.6.data | tr -d '\n' >> /tmp/request.json
+    printf '%s' '","encoding":"base64"}' >> /tmp/request.json
+    curl --fail --location --silent --show-error --header "JOB-TOKEN: $CI_JOB_TOKEN" --header "Content-Type: application/json" --data-binary @/tmp/request.json "$CI_API_V4_URL/projects/$CI_PROJECT_ID/repository/files/unified_carts_build%2FUnifiedCarts_SaucedMerged_v0.1.6.data"
   artifacts:
     paths:
-      - UnifiedCarts_SaucedMerged_v0.1.5.zip
+      - UnifiedCarts_SaucedMerged_v0.1.6.zip
     expire_in: 7 days
