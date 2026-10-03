@@ -36,7 +36,7 @@ package_unified_carts:
         p="$1"
         out="$2"
         enc=$(printf '%s' "$p" | sed 's|/|%2F|g')
-        curl --fail --location --silent --show-error           --header "JOB-TOKEN: $CI_JOB_TOKEN"           "$CI_API_V4_URL/projects/$CI_PROJECT_ID/repository/files/$enc/raw?ref=$CI_COMMIT_REF_NAME&lfs=true"           -o "$out"
+        curl --fail --location --silent --show-error --header "JOB-TOKEN: $CI_JOB_TOKEN" "$CI_API_V4_URL/projects/$CI_PROJECT_ID/repository/files/$enc/raw?ref=$CI_COMMIT_REF_NAME&lfs=true" -o "$out"
       }
       base="steamapps/workshop/content/108600"
       dest="build/UnifiedCarts/42"
@@ -74,7 +74,7 @@ package_unified_carts:
     - zip -qr ../UnifiedCarts_SaucedMerged_v0.1.2.zip UnifiedCarts
     - cd ..
     - unzip -t UnifiedCarts_SaucedMerged_v0.1.2.zip
-    - curl --fail --location --silent --show-error         --header "JOB-TOKEN: $CI_JOB_TOKEN"         --form "file=@UnifiedCarts_SaucedMerged_v0.1.2.zip"         "$CI_API_V4_URL/projects/$CI_PROJECT_ID/uploads"
+    - curl --fail --location --silent --show-error --header "JOB-TOKEN: $CI_JOB_TOKEN" --form "file=@UnifiedCarts_SaucedMerged_v0.1.2.zip" "$CI_API_V4_URL/projects/$CI_PROJECT_ID/uploads"
   artifacts:
     when: always
     paths:
